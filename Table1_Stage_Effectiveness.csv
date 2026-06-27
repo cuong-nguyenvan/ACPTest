@@ -1,0 +1,4 @@
+Stage,Test_Cases,Coverage_%,Fault_Detection_%,Redundancy_%
+Initial Policy,38.08,51.3,37.1,37.92
+After CBR Reuse,20.46,85.79,75.08,30.28
+After CBR + RL,21.06,93.15,84.79,4.15
