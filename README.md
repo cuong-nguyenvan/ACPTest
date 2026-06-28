@@ -258,20 +258,6 @@ The framework is evaluated on **XACML 3.0** healthcare access control policies w
 
 ---
 
-## 📖 Citation
-
-If you use ACPTest in your research, please cite:
-
-```bibtex
-@misc{acptest2025,
-  author       = {Nguyen Van Cuong},
-  title        = {{ACPTest}: Automated Test Suite Generation for Access Control Policies
-                  Using Case-Based Reasoning and Reinforcement Learning},
-  year         = {2025},
-  howpublished = {\url{https://github.com/cuong-nguyenvan/ACPTest}},
-}
-```
-
 ---
 
 ## 📄 License
