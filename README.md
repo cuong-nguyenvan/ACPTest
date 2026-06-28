@@ -44,7 +44,7 @@ ACPTest/
 ├── Table1_Stage_Effectiveness.csv   # Results: per-stage quality metrics
 ├── Table2_Policy_Evolution.csv      # Results: test reuse under policy changes
 ├── Table3_RL_Contribution.csv       # Results: RL contribution (before vs after)
-├── Figure3_ACPTest_Quality_Runtime.png  # Quality & runtime chart
+├── Chart_PanelB_Final (1).png       # Quality & runtime chart
 └── README.md
 ```
 
