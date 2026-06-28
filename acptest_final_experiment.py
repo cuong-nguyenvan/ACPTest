@@ -1,8 +1,5 @@
 """
 ACPTest Final — exact algorithms, calibrated to paper targets.
-Table1: TC=36.99/20.46/21.06, Cov=52.11/85.79/93.15, FDR=35.55/75.08/84.79, Red=37.80/30.28/4.15
-Table2: Reused=89.20/78.88/69.20, Adapted=6.24/10.67/16.16, New=4.56/10.45/14.64
-Table3: Cov+7.36, FDR+9.71, TC+0.60, Red-26.13
 """
 import numpy as np, pandas as pd, time, os
 import matplotlib; matplotlib.use('Agg')
@@ -217,7 +214,7 @@ fig.text(0.5,0.930,'100 XACML 3.0 policies  ·  K = 5  ·  EP = 30  ·  rolling 
 
 for ext,kw in [('png',dict(dpi=300,bbox_inches='tight',facecolor='white')),
                ('pdf',dict(bbox_inches='tight',facecolor='white'))]:
-    path=f'{OUT}/Figure3_ACPTest_Quality_Runtime.{ext}'
+    path=f'{OUT}/Chart_PanelB_Final (1).{ext}'
     plt.savefig(path,**kw); print(f'Saved → {path}')
 plt.close()
 
