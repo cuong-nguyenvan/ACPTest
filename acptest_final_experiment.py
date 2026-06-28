@@ -17,7 +17,7 @@ W=np.array([0.20,0.15,0.10,0.20,0.15,0.10,0.10])
 ALPHA,BETA,GAMMA,DELTA=0.35,0.40,0.80,0.02
 ETA,LAM=0.20,0.90
 
-# ── Generate policies (106±45 rules per paper) ────────────────────
+# ── Generate policies  ────────────────────
 rng=np.random.RandomState(42)
 nr=np.clip(rng.normal(106,45,N),10,200).astype(int)
 policies=np.column_stack([
