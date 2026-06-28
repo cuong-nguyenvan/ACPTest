@@ -192,7 +192,7 @@ This will:
 | `Table1_Stage_Effectiveness.csv` | Coverage, FDR, redundancy per pipeline stage |
 | `Table2_Policy_Evolution.csv` | Test reuse/adaptation ratios under policy change |
 | `Table3_RL_Contribution.csv` | Before/after RL comparison |
-| `Figure3_ACPTest_Quality_Runtime.png` | Quality metrics + cumulative runtime chart |
+| `Chart_PanelB_Final (1).png` | Quality metrics + cumulative runtime chart |
 | `Figure3_ACPTest_Quality_Runtime.pdf` | Same chart, vector format |
 
 ---
