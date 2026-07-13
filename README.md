@@ -103,6 +103,7 @@ ACPTest/
 └── docs/
     └── figures/
         └── Chart_Panel.png        ← Main results chart
+        └── EXPERIMENTS.md         ← steps to recreate the experiment
 ```
 
 ## Documentation
