@@ -117,7 +117,7 @@ ACPTest/
 
 ```bibtex
 @article{cuongACPTest,
-  title={Automated Test Suite Generation for XACML 3.0 Access Control Policies Using Case-Based Reasoning and Reinforcement Learning},
+  title={Automated Test Suite Generation for Access Control Policies Using Case-Based Reasoning and Reinforcement Learning},
   author={Van, Cuong Nguyen and Trinh, Thanh Binh and Ngoc, Minh Le and Ha, Nguyen Viet},
   year={2026}
 }
