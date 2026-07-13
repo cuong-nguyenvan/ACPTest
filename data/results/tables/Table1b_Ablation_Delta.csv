@@ -1,0 +1,4 @@
+Configuration,Delta_Coverage_pp,Delta_FaultDetection_pp,Delta_TestCases,Delta_Redundancy_pp
+CBR only,+31.71 ± 0.82,+35.03 ± 2.42,-16.30 ± 0.68,-15.16 ± 0.79
+RL only,+24.55 ± 0.94,+27.18 ± 2.13,-8.42 ± 0.72,-5.41 ± 0.76
+CBR + RL (ACPTest),+39.18 ± 0.59,+49.27 ± 1.78,-15.70 ± 0.70,-33.47 ± 0.72

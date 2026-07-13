@@ -1,0 +1,5 @@
+Metric,Without_RL_CBR_modelled,With_RL_CBR_RL_modelled,Delta_MeanSD,Direction
+Coverage (%),83.26 ± 1.50,90.73 ± 1.18,+7.47 ± 0.74,+
+Fault Detection (%),71.98 ± 1.74,86.22 ± 1.14,+14.24 ± 1.27,+
+Test Cases,20.45 ± 0.31,21.04 ± 0.25,+0.59 ± 0.40,+/-
+Redundancy (%),22.50 ± 0.46,4.19 ± 0.22,+18.31 ± 0.51,reduced (improvement)

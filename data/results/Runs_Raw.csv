@@ -1,0 +1,481 @@
+Run,Configuration,Metric,Value_modelled
+1,From-scratch,Test Cases (modelled),36.3111
+1,From-scratch,Coverage % (modelled),50.0315
+1,From-scratch,Fault Detection % (modelled),34.9712
+1,From-scratch,Redundancy % (modelled),36.7091
+1,CBR only,Test Cases (modelled),20.5356
+1,CBR only,Coverage % (modelled),81.9759
+1,CBR only,Fault Detection % (modelled),69.1481
+1,CBR only,Redundancy % (modelled),22.3398
+1,RL only,Test Cases (modelled),28.4324
+1,RL only,Coverage % (modelled),75.5125
+1,RL only,Fault Detection % (modelled),63.5945
+1,RL only,Redundancy % (modelled),31.062
+1,CBR + RL (ACPTest),Test Cases (modelled),20.8697
+1,CBR + RL (ACPTest),Coverage % (modelled),89.7784
+1,CBR + RL (ACPTest),Fault Detection % (modelled),85.0277
+1,CBR + RL (ACPTest),Redundancy % (modelled),4.3571
+2,From-scratch,Test Cases (modelled),37.0528
+2,From-scratch,Coverage % (modelled),52.6525
+2,From-scratch,Fault Detection % (modelled),38.0784
+2,From-scratch,Redundancy % (modelled),37.6451
+2,CBR only,Test Cases (modelled),20.2859
+2,CBR only,Coverage % (modelled),84.0142
+2,CBR only,Fault Detection % (modelled),72.9448
+2,CBR only,Redundancy % (modelled),22.3811
+2,RL only,Test Cases (modelled),28.3339
+2,RL only,Coverage % (modelled),76.8842
+2,RL only,Fault Detection % (modelled),65.8043
+2,RL only,Redundancy % (modelled),32.8415
+2,CBR + RL (ACPTest),Test Cases (modelled),20.6471
+2,CBR + RL (ACPTest),Coverage % (modelled),91.9624
+2,CBR + RL (ACPTest),Fault Detection % (modelled),86.8534
+2,CBR + RL (ACPTest),Redundancy % (modelled),4.0702
+3,From-scratch,Test Cases (modelled),36.2675
+3,From-scratch,Coverage % (modelled),51.9024
+3,From-scratch,Fault Detection % (modelled),35.5387
+3,From-scratch,Redundancy % (modelled),37.874
+3,CBR only,Test Cases (modelled),20.3167
+3,CBR only,Coverage % (modelled),84.0436
+3,CBR only,Fault Detection % (modelled),73.0968
+3,CBR only,Redundancy % (modelled),22.2542
+3,RL only,Test Cases (modelled),28.3409
+3,RL only,Coverage % (modelled),75.956
+3,RL only,Fault Detection % (modelled),66.3775
+3,RL only,Redundancy % (modelled),32.2465
+3,CBR + RL (ACPTest),Test Cases (modelled),21.0956
+3,CBR + RL (ACPTest),Coverage % (modelled),91.5826
+3,CBR + RL (ACPTest),Fault Detection % (modelled),86.983
+3,CBR + RL (ACPTest),Redundancy % (modelled),4.068
+4,From-scratch,Test Cases (modelled),36.4236
+4,From-scratch,Coverage % (modelled),52.5921
+4,From-scratch,Fault Detection % (modelled),34.9952
+4,From-scratch,Redundancy % (modelled),36.3778
+4,CBR only,Test Cases (modelled),20.0771
+4,CBR only,Coverage % (modelled),84.6209
+4,CBR only,Fault Detection % (modelled),73.8222
+4,CBR only,Redundancy % (modelled),21.2459
+4,RL only,Test Cases (modelled),28.0009
+4,RL only,Coverage % (modelled),76.4168
+4,RL only,Fault Detection % (modelled),64.5936
+4,RL only,Redundancy % (modelled),31.707
+4,CBR + RL (ACPTest),Test Cases (modelled),20.8727
+4,CBR + RL (ACPTest),Coverage % (modelled),92.2864
+4,CBR + RL (ACPTest),Fault Detection % (modelled),86.1171
+4,CBR + RL (ACPTest),Redundancy % (modelled),4.6034
+5,From-scratch,Test Cases (modelled),36.9234
+5,From-scratch,Coverage % (modelled),48.0307
+5,From-scratch,Fault Detection % (modelled),34.9452
+5,From-scratch,Redundancy % (modelled),37.887
+5,CBR only,Test Cases (modelled),20.1541
+5,CBR only,Coverage % (modelled),79.2286
+5,CBR only,Fault Detection % (modelled),68.2282
+5,CBR only,Redundancy % (modelled),23.0019
+5,RL only,Test Cases (modelled),28.0767
+5,RL only,Coverage % (modelled),73.4865
+5,RL only,Fault Detection % (modelled),62.3652
+5,RL only,Redundancy % (modelled),31.6692
+5,CBR + RL (ACPTest),Test Cases (modelled),20.772
+5,CBR + RL (ACPTest),Coverage % (modelled),87.3383
+5,CBR + RL (ACPTest),Fault Detection % (modelled),82.7545
+5,CBR + RL (ACPTest),Redundancy % (modelled),4.1629
+6,From-scratch,Test Cases (modelled),36.2277
+6,From-scratch,Coverage % (modelled),51.9899
+6,From-scratch,Fault Detection % (modelled),36.5042
+6,From-scratch,Redundancy % (modelled),38.2281
+6,CBR only,Test Cases (modelled),20.1164
+6,CBR only,Coverage % (modelled),83.4623
+6,CBR only,Fault Detection % (modelled),72.0982
+6,CBR only,Redundancy % (modelled),22.6225
+6,RL only,Test Cases (modelled),29.2563
+6,RL only,Coverage % (modelled),77.6158
+6,RL only,Fault Detection % (modelled),65.8718
+6,RL only,Redundancy % (modelled),31.2186
+6,CBR + RL (ACPTest),Test Cases (modelled),21.3552
+6,CBR + RL (ACPTest),Coverage % (modelled),91.3043
+6,CBR + RL (ACPTest),Fault Detection % (modelled),86.8001
+6,CBR + RL (ACPTest),Redundancy % (modelled),3.896
+7,From-scratch,Test Cases (modelled),37.0581
+7,From-scratch,Coverage % (modelled),52.2259
+7,From-scratch,Fault Detection % (modelled),38.8176
+7,From-scratch,Redundancy % (modelled),37.2877
+7,CBR only,Test Cases (modelled),20.1383
+7,CBR only,Coverage % (modelled),82.8217
+7,CBR only,Fault Detection % (modelled),70.9149
+7,CBR only,Redundancy % (modelled),22.3573
+7,RL only,Test Cases (modelled),27.8464
+7,RL only,Coverage % (modelled),75.922
+7,RL only,Fault Detection % (modelled),63.3268
+7,RL only,Redundancy % (modelled),33.1851
+7,CBR + RL (ACPTest),Test Cases (modelled),21.1637
+7,CBR + RL (ACPTest),Coverage % (modelled),90.6955
+7,CBR + RL (ACPTest),Fault Detection % (modelled),85.4423
+7,CBR + RL (ACPTest),Redundancy % (modelled),4.1602
+8,From-scratch,Test Cases (modelled),36.4238
+8,From-scratch,Coverage % (modelled),51.8041
+8,From-scratch,Fault Detection % (modelled),38.001
+8,From-scratch,Redundancy % (modelled),36.7664
+8,CBR only,Test Cases (modelled),20.3099
+8,CBR only,Coverage % (modelled),83.5424
+8,CBR only,Fault Detection % (modelled),70.2757
+8,CBR only,Redundancy % (modelled),22.494
+8,RL only,Test Cases (modelled),28.294
+8,RL only,Coverage % (modelled),76.1847
+8,RL only,Fault Detection % (modelled),63.5876
+8,RL only,Redundancy % (modelled),32.2842
+8,CBR + RL (ACPTest),Test Cases (modelled),21.0067
+8,CBR + RL (ACPTest),Coverage % (modelled),90.5883
+8,CBR + RL (ACPTest),Fault Detection % (modelled),85.0513
+8,CBR + RL (ACPTest),Redundancy % (modelled),4.3904
+9,From-scratch,Test Cases (modelled),36.9673
+9,From-scratch,Coverage % (modelled),51.589
+9,From-scratch,Fault Detection % (modelled),38.2956
+9,From-scratch,Redundancy % (modelled),37.7801
+9,CBR only,Test Cases (modelled),20.6347
+9,CBR only,Coverage % (modelled),82.4111
+9,CBR only,Fault Detection % (modelled),69.366
+9,CBR only,Redundancy % (modelled),22.3334
+9,RL only,Test Cases (modelled),28.2509
+9,RL only,Coverage % (modelled),77.3747
+9,RL only,Fault Detection % (modelled),65.1803
+9,RL only,Redundancy % (modelled),32.5754
+9,CBR + RL (ACPTest),Test Cases (modelled),21.4233
+9,CBR + RL (ACPTest),Coverage % (modelled),90.4823
+9,CBR + RL (ACPTest),Fault Detection % (modelled),85.8393
+9,CBR + RL (ACPTest),Redundancy % (modelled),4.2461
+10,From-scratch,Test Cases (modelled),37.8968
+10,From-scratch,Coverage % (modelled),53.4074
+10,From-scratch,Fault Detection % (modelled),36.9339
+10,From-scratch,Redundancy % (modelled),37.8128
+10,CBR only,Test Cases (modelled),20.5463
+10,CBR only,Coverage % (modelled),86.3117
+10,CBR only,Fault Detection % (modelled),74.5556
+10,CBR only,Redundancy % (modelled),21.9866
+10,RL only,Test Cases (modelled),28.0848
+10,RL only,Coverage % (modelled),76.0981
+10,RL only,Fault Detection % (modelled),62.8744
+10,RL only,Redundancy % (modelled),32.5172
+10,CBR + RL (ACPTest),Test Cases (modelled),20.5395
+10,CBR + RL (ACPTest),Coverage % (modelled),93.281
+10,CBR + RL (ACPTest),Fault Detection % (modelled),88.1008
+10,CBR + RL (ACPTest),Redundancy % (modelled),3.7128
+11,From-scratch,Test Cases (modelled),37.7686
+11,From-scratch,Coverage % (modelled),52.1648
+11,From-scratch,Fault Detection % (modelled),38.2324
+11,From-scratch,Redundancy % (modelled),38.5134
+11,CBR only,Test Cases (modelled),20.7616
+11,CBR only,Coverage % (modelled),84.0809
+11,CBR only,Fault Detection % (modelled),72.7122
+11,CBR only,Redundancy % (modelled),22.4186
+11,RL only,Test Cases (modelled),28.3251
+11,RL only,Coverage % (modelled),75.5013
+11,RL only,Fault Detection % (modelled),64.9537
+11,RL only,Redundancy % (modelled),33.2295
+11,CBR + RL (ACPTest),Test Cases (modelled),21.0652
+11,CBR + RL (ACPTest),Coverage % (modelled),90.3606
+11,CBR + RL (ACPTest),Fault Detection % (modelled),86.1697
+11,CBR + RL (ACPTest),Redundancy % (modelled),4.3999
+12,From-scratch,Test Cases (modelled),36.5856
+12,From-scratch,Coverage % (modelled),50.5202
+12,From-scratch,Fault Detection % (modelled),38.2806
+12,From-scratch,Redundancy % (modelled),37.4086
+12,CBR only,Test Cases (modelled),20.5403
+12,CBR only,Coverage % (modelled),81.4164
+12,CBR only,Fault Detection % (modelled),73.2283
+12,CBR only,Redundancy % (modelled),22.7712
+12,RL only,Test Cases (modelled),28.6265
+12,RL only,Coverage % (modelled),75.0102
+12,RL only,Fault Detection % (modelled),64.7098
+12,RL only,Redundancy % (modelled),33.4092
+12,CBR + RL (ACPTest),Test Cases (modelled),20.8414
+12,CBR + RL (ACPTest),Coverage % (modelled),89.909
+12,CBR + RL (ACPTest),Fault Detection % (modelled),86.1043
+12,CBR + RL (ACPTest),Redundancy % (modelled),4.4269
+13,From-scratch,Test Cases (modelled),36.1736
+13,From-scratch,Coverage % (modelled),52.5701
+13,From-scratch,Fault Detection % (modelled),37.2372
+13,From-scratch,Redundancy % (modelled),37.7313
+13,CBR only,Test Cases (modelled),20.6104
+13,CBR only,Coverage % (modelled),83.4001
+13,CBR only,Fault Detection % (modelled),72.838
+13,CBR only,Redundancy % (modelled),22.2254
+13,RL only,Test Cases (modelled),27.7817
+13,RL only,Coverage % (modelled),77.9999
+13,RL only,Fault Detection % (modelled),67.0491
+13,RL only,Redundancy % (modelled),32.3281
+13,CBR + RL (ACPTest),Test Cases (modelled),21.1557
+13,CBR + RL (ACPTest),Coverage % (modelled),90.6224
+13,CBR + RL (ACPTest),Fault Detection % (modelled),85.6534
+13,CBR + RL (ACPTest),Redundancy % (modelled),4.1722
+14,From-scratch,Test Cases (modelled),37.4569
+14,From-scratch,Coverage % (modelled),49.6644
+14,From-scratch,Fault Detection % (modelled),35.9872
+14,From-scratch,Redundancy % (modelled),37.3828
+14,CBR only,Test Cases (modelled),21.0673
+14,CBR only,Coverage % (modelled),80.1717
+14,CBR only,Fault Detection % (modelled),68.7141
+14,CBR only,Redundancy % (modelled),23.7367
+14,RL only,Test Cases (modelled),28.6027
+14,RL only,Coverage % (modelled),73.6039
+14,RL only,Fault Detection % (modelled),59.1877
+14,RL only,Redundancy % (modelled),31.4356
+14,CBR + RL (ACPTest),Test Cases (modelled),21.0076
+14,CBR + RL (ACPTest),Coverage % (modelled),89.0877
+14,CBR + RL (ACPTest),Fault Detection % (modelled),84.7106
+14,CBR + RL (ACPTest),Redundancy % (modelled),4.5416
+15,From-scratch,Test Cases (modelled),37.0599
+15,From-scratch,Coverage % (modelled),51.6807
+15,From-scratch,Fault Detection % (modelled),36.612
+15,From-scratch,Redundancy % (modelled),36.6899
+15,CBR only,Test Cases (modelled),20.3535
+15,CBR only,Coverage % (modelled),82.8829
+15,CBR only,Fault Detection % (modelled),71.832
+15,CBR only,Redundancy % (modelled),22.8397
+15,RL only,Test Cases (modelled),28.8279
+15,RL only,Coverage % (modelled),77.0139
+15,RL only,Fault Detection % (modelled),64.4522
+15,RL only,Redundancy % (modelled),32.1713
+15,CBR + RL (ACPTest),Test Cases (modelled),21.0769
+15,CBR + RL (ACPTest),Coverage % (modelled),91.1488
+15,CBR + RL (ACPTest),Fault Detection % (modelled),86.1355
+15,CBR + RL (ACPTest),Redundancy % (modelled),3.8824
+16,From-scratch,Test Cases (modelled),37.7581
+16,From-scratch,Coverage % (modelled),52.65
+16,From-scratch,Fault Detection % (modelled),35.598
+16,From-scratch,Redundancy % (modelled),37.7069
+16,CBR only,Test Cases (modelled),20.0181
+16,CBR only,Coverage % (modelled),84.2732
+16,CBR only,Fault Detection % (modelled),74.3526
+16,CBR only,Redundancy % (modelled),22.4182
+16,RL only,Test Cases (modelled),28.5114
+16,RL only,Coverage % (modelled),77.7127
+16,RL only,Fault Detection % (modelled),64.6052
+16,RL only,Redundancy % (modelled),32.4576
+16,CBR + RL (ACPTest),Test Cases (modelled),21.0841
+16,CBR + RL (ACPTest),Coverage % (modelled),92.2705
+16,CBR + RL (ACPTest),Fault Detection % (modelled),87.8336
+16,CBR + RL (ACPTest),Redundancy % (modelled),4.4449
+17,From-scratch,Test Cases (modelled),36.3255
+17,From-scratch,Coverage % (modelled),50.9362
+17,From-scratch,Fault Detection % (modelled),35.5288
+17,From-scratch,Redundancy % (modelled),37.7857
+17,CBR only,Test Cases (modelled),20.3905
+17,CBR only,Coverage % (modelled),82.9605
+17,CBR only,Fault Detection % (modelled),71.8356
+17,CBR only,Redundancy % (modelled),22.2388
+17,RL only,Test Cases (modelled),28.3895
+17,RL only,Coverage % (modelled),76.2245
+17,RL only,Fault Detection % (modelled),64.5508
+17,RL only,Redundancy % (modelled),32.8158
+17,CBR + RL (ACPTest),Test Cases (modelled),20.9524
+17,CBR + RL (ACPTest),Coverage % (modelled),90.6982
+17,CBR + RL (ACPTest),Fault Detection % (modelled),86.1101
+17,CBR + RL (ACPTest),Redundancy % (modelled),4.2181
+18,From-scratch,Test Cases (modelled),35.9816
+18,From-scratch,Coverage % (modelled),51.2848
+18,From-scratch,Fault Detection % (modelled),36.5047
+18,From-scratch,Redundancy % (modelled),38.7242
+18,CBR only,Test Cases (modelled),20.3126
+18,CBR only,Coverage % (modelled),83.0127
+18,CBR only,Fault Detection % (modelled),72.9952
+18,CBR only,Redundancy % (modelled),22.3606
+18,RL only,Test Cases (modelled),28.614
+18,RL only,Coverage % (modelled),75.8726
+18,RL only,Fault Detection % (modelled),66.1567
+18,RL only,Redundancy % (modelled),32.0349
+18,CBR + RL (ACPTest),Test Cases (modelled),20.9594
+18,CBR + RL (ACPTest),Coverage % (modelled),90.1577
+18,CBR + RL (ACPTest),Fault Detection % (modelled),85.3717
+18,CBR + RL (ACPTest),Redundancy % (modelled),3.9312
+19,From-scratch,Test Cases (modelled),37.4774
+19,From-scratch,Coverage % (modelled),52.1366
+19,From-scratch,Fault Detection % (modelled),41.1494
+19,From-scratch,Redundancy % (modelled),36.9848
+19,CBR only,Test Cases (modelled),20.5881
+19,CBR only,Coverage % (modelled),83.6582
+19,CBR only,Fault Detection % (modelled),70.9723
+19,CBR only,Redundancy % (modelled),23.0856
+19,RL only,Test Cases (modelled),28.0801
+19,RL only,Coverage % (modelled),76.3839
+19,RL only,Fault Detection % (modelled),66.2878
+19,RL only,Redundancy % (modelled),31.3758
+19,CBR + RL (ACPTest),Test Cases (modelled),20.917
+19,CBR + RL (ACPTest),Coverage % (modelled),90.5006
+19,CBR + RL (ACPTest),Fault Detection % (modelled),86.5364
+19,CBR + RL (ACPTest),Redundancy % (modelled),4.4829
+20,From-scratch,Test Cases (modelled),36.8256
+20,From-scratch,Coverage % (modelled),51.335
+20,From-scratch,Fault Detection % (modelled),35.9023
+20,From-scratch,Redundancy % (modelled),36.9126
+20,CBR only,Test Cases (modelled),20.5567
+20,CBR only,Coverage % (modelled),84.2983
+20,CBR only,Fault Detection % (modelled),72.9138
+20,CBR only,Redundancy % (modelled),22.5282
+20,RL only,Test Cases (modelled),28.4652
+20,RL only,Coverage % (modelled),77.4615
+20,RL only,Fault Detection % (modelled),65.7355
+20,RL only,Redundancy % (modelled),32.0064
+20,CBR + RL (ACPTest),Test Cases (modelled),21.4414
+20,CBR + RL (ACPTest),Coverage % (modelled),90.5397
+20,CBR + RL (ACPTest),Fault Detection % (modelled),86.8762
+20,CBR + RL (ACPTest),Redundancy % (modelled),4.0198
+21,From-scratch,Test Cases (modelled),36.4398
+21,From-scratch,Coverage % (modelled),51.6972
+21,From-scratch,Fault Detection % (modelled),33.8344
+21,From-scratch,Redundancy % (modelled),38.2749
+21,CBR only,Test Cases (modelled),20.3283
+21,CBR only,Coverage % (modelled),84.9992
+21,CBR only,Fault Detection % (modelled),71.8383
+21,CBR only,Redundancy % (modelled),22.174
+21,RL only,Test Cases (modelled),27.9922
+21,RL only,Coverage % (modelled),76.801
+21,RL only,Fault Detection % (modelled),62.9633
+21,RL only,Redundancy % (modelled),32.4931
+21,CBR + RL (ACPTest),Test Cases (modelled),21.048
+21,CBR + RL (ACPTest),Coverage % (modelled),91.4339
+21,CBR + RL (ACPTest),Fault Detection % (modelled),86.8243
+21,CBR + RL (ACPTest),Redundancy % (modelled),4.1641
+22,From-scratch,Test Cases (modelled),35.7912
+22,From-scratch,Coverage % (modelled),50.7788
+22,From-scratch,Fault Detection % (modelled),36.4627
+22,From-scratch,Redundancy % (modelled),36.928
+22,CBR only,Test Cases (modelled),21.4866
+22,CBR only,Coverage % (modelled),81.5701
+22,CBR only,Fault Detection % (modelled),70.6112
+22,CBR only,Redundancy % (modelled),22.9654
+22,RL only,Test Cases (modelled),28.6532
+22,RL only,Coverage % (modelled),76.7581
+22,RL only,Fault Detection % (modelled),63.6233
+22,RL only,Redundancy % (modelled),31.7386
+22,CBR + RL (ACPTest),Test Cases (modelled),21.0202
+22,CBR + RL (ACPTest),Coverage % (modelled),89.8623
+22,CBR + RL (ACPTest),Fault Detection % (modelled),84.6625
+22,CBR + RL (ACPTest),Redundancy % (modelled),4.2359
+23,From-scratch,Test Cases (modelled),36.823
+23,From-scratch,Coverage % (modelled),50.7451
+23,From-scratch,Fault Detection % (modelled),37.2458
+23,From-scratch,Redundancy % (modelled),37.5188
+23,CBR only,Test Cases (modelled),20.4691
+23,CBR only,Coverage % (modelled),82.8711
+23,CBR only,Fault Detection % (modelled),70.7443
+23,CBR only,Redundancy % (modelled),22.5392
+23,RL only,Test Cases (modelled),27.6125
+23,RL only,Coverage % (modelled),74.6988
+23,RL only,Fault Detection % (modelled),61.2623
+23,RL only,Redundancy % (modelled),32.8983
+23,CBR + RL (ACPTest),Test Cases (modelled),21.375
+23,CBR + RL (ACPTest),Coverage % (modelled),91.0666
+23,CBR + RL (ACPTest),Fault Detection % (modelled),86.5182
+23,CBR + RL (ACPTest),Redundancy % (modelled),4.1773
+24,From-scratch,Test Cases (modelled),36.1298
+24,From-scratch,Coverage % (modelled),50.3743
+24,From-scratch,Fault Detection % (modelled),35.2054
+24,From-scratch,Redundancy % (modelled),37.7569
+24,CBR only,Test Cases (modelled),20.6302
+24,CBR only,Coverage % (modelled),82.0616
+24,CBR only,Fault Detection % (modelled),72.8693
+24,CBR only,Redundancy % (modelled),22.731
+24,RL only,Test Cases (modelled),28.0317
+24,RL only,Coverage % (modelled),76.2154
+24,RL only,Fault Detection % (modelled),64.1813
+24,RL only,Redundancy % (modelled),32.5162
+24,CBR + RL (ACPTest),Test Cases (modelled),21.1635
+24,CBR + RL (ACPTest),Coverage % (modelled),88.5246
+24,CBR + RL (ACPTest),Fault Detection % (modelled),85.3559
+24,CBR + RL (ACPTest),Redundancy % (modelled),4.1924
+25,From-scratch,Test Cases (modelled),35.5583
+25,From-scratch,Coverage % (modelled),52.1895
+25,From-scratch,Fault Detection % (modelled),37.7458
+25,From-scratch,Redundancy % (modelled),38.3948
+25,CBR only,Test Cases (modelled),20.4834
+25,CBR only,Coverage % (modelled),83.7417
+25,CBR only,Fault Detection % (modelled),74.1561
+25,CBR only,Redundancy % (modelled),21.9647
+25,RL only,Test Cases (modelled),28.4296
+25,RL only,Coverage % (modelled),76.2176
+25,RL only,Fault Detection % (modelled),64.1705
+25,RL only,Redundancy % (modelled),31.8281
+25,CBR + RL (ACPTest),Test Cases (modelled),21.3052
+25,CBR + RL (ACPTest),Coverage % (modelled),91.1513
+25,CBR + RL (ACPTest),Fault Detection % (modelled),86.672
+25,CBR + RL (ACPTest),Redundancy % (modelled),4.0489
+26,From-scratch,Test Cases (modelled),36.6086
+26,From-scratch,Coverage % (modelled),51.1617
+26,From-scratch,Fault Detection % (modelled),35.6484
+26,From-scratch,Redundancy % (modelled),38.5288
+26,CBR only,Test Cases (modelled),20.1443
+26,CBR only,Coverage % (modelled),84.4302
+26,CBR only,Fault Detection % (modelled),74.1997
+26,CBR only,Redundancy % (modelled),22.6151
+26,RL only,Test Cases (modelled),28.3668
+26,RL only,Coverage % (modelled),74.9066
+26,RL only,Fault Detection % (modelled),62.817
+26,RL only,Redundancy % (modelled),32.6873
+26,CBR + RL (ACPTest),Test Cases (modelled),21.6757
+26,CBR + RL (ACPTest),Coverage % (modelled),91.0946
+26,CBR + RL (ACPTest),Fault Detection % (modelled),87.7454
+26,CBR + RL (ACPTest),Redundancy % (modelled),4.2208
+27,From-scratch,Test Cases (modelled),37.1583
+27,From-scratch,Coverage % (modelled),53.3318
+27,From-scratch,Fault Detection % (modelled),38.4916
+27,From-scratch,Redundancy % (modelled),37.3371
+27,CBR only,Test Cases (modelled),20.2896
+27,CBR only,Coverage % (modelled),85.1374
+27,CBR only,Fault Detection % (modelled),73.3589
+27,CBR only,Redundancy % (modelled),22.664
+27,RL only,Test Cases (modelled),29.2087
+27,RL only,Coverage % (modelled),76.2465
+27,RL only,Fault Detection % (modelled),65.2058
+27,RL only,Redundancy % (modelled),32.4439
+27,CBR + RL (ACPTest),Test Cases (modelled),21.0676
+27,CBR + RL (ACPTest),Coverage % (modelled),92.3735
+27,CBR + RL (ACPTest),Fault Detection % (modelled),87.7219
+27,CBR + RL (ACPTest),Redundancy % (modelled),3.8996
+28,From-scratch,Test Cases (modelled),36.9159
+28,From-scratch,Coverage % (modelled),51.6217
+28,From-scratch,Fault Detection % (modelled),38.8153
+28,From-scratch,Redundancy % (modelled),38.4027
+28,CBR only,Test Cases (modelled),20.1497
+28,CBR only,Coverage % (modelled),84.5582
+28,CBR only,Fault Detection % (modelled),70.255
+28,CBR only,Redundancy % (modelled),23.1014
+28,RL only,Test Cases (modelled),28.269
+28,RL only,Coverage % (modelled),75.7833
+28,RL only,Fault Detection % (modelled),62.6373
+28,RL only,Redundancy % (modelled),32.5351
+28,CBR + RL (ACPTest),Test Cases (modelled),20.788
+28,CBR + RL (ACPTest),Coverage % (modelled),91.2724
+28,CBR + RL (ACPTest),Fault Detection % (modelled),87.6297
+28,CBR + RL (ACPTest),Redundancy % (modelled),4.0041
+29,From-scratch,Test Cases (modelled),36.9301
+29,From-scratch,Coverage % (modelled),51.7934
+29,From-scratch,Fault Detection % (modelled),38.0834
+29,From-scratch,Redundancy % (modelled),38.3299
+29,CBR only,Test Cases (modelled),20.7156
+29,CBR only,Coverage % (modelled),84.0742
+29,CBR only,Fault Detection % (modelled),73.1563
+29,CBR only,Redundancy % (modelled),21.804
+29,RL only,Test Cases (modelled),28.1585
+29,RL only,Coverage % (modelled),75.0929
+29,RL only,Fault Detection % (modelled),63.183
+29,RL only,Redundancy % (modelled),31.9376
+29,CBR + RL (ACPTest),Test Cases (modelled),20.9085
+29,CBR + RL (ACPTest),Coverage % (modelled),90.5842
+29,CBR + RL (ACPTest),Fault Detection % (modelled),86.6474
+29,CBR + RL (ACPTest),Redundancy % (modelled),4.3956
+30,From-scratch,Test Cases (modelled),37.0878
+30,From-scratch,Coverage % (modelled),51.6003
+30,From-scratch,Fault Detection % (modelled),38.8095
+30,From-scratch,Redundancy % (modelled),38.0654
+30,CBR only,Test Cases (modelled),20.5084
+30,CBR only,Coverage % (modelled),81.6714
+30,CBR only,Fault Detection % (modelled),71.3615
+30,CBR only,Redundancy % (modelled),22.7582
+30,RL only,Test Cases (modelled),27.9155
+30,RL only,Coverage % (modelled),75.9344
+30,RL only,Fault Detection % (modelled),62.5088
+30,RL only,Redundancy % (modelled),31.7495
+30,CBR + RL (ACPTest),Test Cases (modelled),20.7041
+30,CBR + RL (ACPTest),Coverage % (modelled),89.9722
+30,CBR + RL (ACPTest),Fault Detection % (modelled),86.3039
+30,CBR + RL (ACPTest),Redundancy % (modelled),4.0837

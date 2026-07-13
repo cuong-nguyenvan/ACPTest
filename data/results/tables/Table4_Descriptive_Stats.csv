@@ -1,0 +1,17 @@
+Metric,Configuration,Mean,SD,CI95_low,CI95_high,Min,Max,N_runs
+Coverage % (modelled),From-scratch,51.549,1.112,51.134,51.964,48.031,53.407,30
+Coverage % (modelled),CBR only,83.257,1.496,82.698,83.815,79.229,86.312,30
+Coverage % (modelled),RL only,76.096,1.086,75.691,76.502,73.487,78.0,30
+Coverage % (modelled),CBR + RL (ACPTest),90.731,1.183,90.289,91.173,87.338,93.281,30
+Fault Detection % (modelled),From-scratch,36.949,1.608,36.348,37.549,33.834,41.149,30
+Fault Detection % (modelled),CBR only,71.98,1.74,71.33,72.63,68.228,74.556,30
+Fault Detection % (modelled),RL only,64.127,1.686,63.498,64.757,59.188,67.049,30
+Fault Detection % (modelled),CBR + RL (ACPTest),86.218,1.137,85.794,86.643,82.755,88.101,30
+Redundancy % (modelled),From-scratch,37.658,0.628,37.424,37.893,36.378,38.724,30
+Redundancy % (modelled),CBR only,22.499,0.459,22.327,22.67,21.246,23.737,30
+Redundancy % (modelled),RL only,32.247,0.598,32.023,32.47,31.062,33.409,30
+Redundancy % (modelled),CBR + RL (ACPTest),4.187,0.216,4.106,4.268,3.713,4.603,30
+Test Cases (modelled),From-scratch,36.747,0.587,36.528,36.966,35.558,37.897,30
+Test Cases (modelled),CBR only,20.451,0.306,20.336,20.565,20.018,21.487,30
+Test Cases (modelled),RL only,28.326,0.374,28.186,28.466,27.612,29.256,30
+Test Cases (modelled),CBR + RL (ACPTest),21.043,0.252,20.949,21.138,20.539,21.676,30

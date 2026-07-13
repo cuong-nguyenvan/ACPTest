@@ -1,0 +1,6 @@
+{
+  "policy_size": 15,
+  "total_mutants": 75,
+  "true_equivalent": 7,
+  "stage3_false_negative_rate_pct": 0.0
+}

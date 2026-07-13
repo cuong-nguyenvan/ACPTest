@@ -1,0 +1,162 @@
+# =============================================================================
+#  ACPTest — Master Experiment Configuration
+#  All parameters needed to reproduce the R=30 ablation study.
+# =============================================================================
+
+experiment:
+  name: "ACPTest_ablation_R30"
+  description: >
+    30 independent runs × 4 configurations (From-scratch, CBR only,
+    RL only, CBR + RL) across 100 policy configurations each.
+
+# ---------------------------------------------------------------------------
+#  Randomness control
+# ---------------------------------------------------------------------------
+random:
+  seed_file: "configs/seeds.txt"
+  numpy_seed_offset: 0
+  python_seed_offset: 1000
+
+# ---------------------------------------------------------------------------
+#  Case-Based Reasoning
+# ---------------------------------------------------------------------------
+cbr:
+  similarity_weights:            # See REPRODUCIBILITY.md §1
+    rule_set_jaccard: 0.30
+    subject_depth: 0.15
+    object_depth: 0.15
+    num_conditions: 0.15
+    conflict_resolution: 0.10
+    default_effect: 0.05
+    combination_algorithm: 0.10
+  retrieval_k: 3
+  adaptation_operators:
+    - "input_mutate"
+    - "outcome_flip"
+    - "condition_remap"
+  case_base:
+    init_size: 5
+    init_dir: "data/case_base_init/"
+    max_size: 500
+    persistence_format: "json"
+
+# ---------------------------------------------------------------------------
+#  Reinforcement Learning (Tabular Q-Learning)
+# ---------------------------------------------------------------------------
+rl:
+  state:
+    dimensions: 5                # cov, fd, red, cb_dist, budget
+    bins_per_dimension: 10       # |S| = 10^5 = 100,000
+  hyperparameters:
+    alpha: 0.10                  # Learning rate
+    gamma: 0.95                  # Discount factor
+    epsilon_start: 1.00          # Initial exploration
+    epsilon_min: 0.05            # Floor exploration
+    epsilon_decay_episodes: 3000 # Linear decay over first 3k episodes
+    training_episodes: 5000
+    convergence_threshold: 0.005 # Mean |TD-error| over 200 episodes
+    max_steps_per_episode: 50
+  reward:
+    delta_coverage: 1.0
+    delta_fault_detection: 1.5
+    delta_redundancy: -2.0
+    step_cost: -0.01
+  actions:
+    - "REUSE"
+    - "ADAPT"
+    - "GENERATE"
+    - "STOP"
+
+# ---------------------------------------------------------------------------
+#  Mutation Testing
+# ---------------------------------------------------------------------------
+mutation:
+  operators:
+    - id: "M1"
+      name: "rule_effect_flip"
+    - id: "M2"
+      name: "condition_removal"
+    - id: "M3"
+      name: "condition_negation"
+    - id: "M4"
+      name: "rule_removal"
+    - id: "M5"
+      name: "rule_duplication"
+    - id: "M6"
+      name: "combiner_change"
+    - id: "M7"
+      name: "target_narrowing"
+  order: 1                       # First-order only
+  equivalence_detection:
+    enabled: true
+    stage1:
+      solver: "z3"
+      timeout_sec: 30
+    stage2:
+      method: "bounded_symbolic"
+      depth_limit: 20
+    stage3:
+      method: "differential_random"
+      num_samples: 100000
+
+# ---------------------------------------------------------------------------
+#  Evaluation & Path Enumeration
+# ---------------------------------------------------------------------------
+evaluation:
+  path_enumeration:
+    exhaustive_threshold: 200     # ≤200 rules → exact
+    pruning_threshold: 1000       # 201–1000 → sub-tree pruning
+    monte_carlo:
+      convergence_delta: 0.01     # 1% growth stop
+      convergence_window: 500
+      bias: "thompson"
+  path_cache:
+    enabled: true
+    hash_algorithm: "sha256"
+    delta_reuse_threshold: 0.30   # Jaccard ≤ 0.30 → delta enumeration
+  metrics:
+    - "coverage_percent"
+    - "fault_detection_percent"
+    - "redundancy_percent"
+    - "test_case_count"
+    - "processing_overhead_ms"
+
+# ---------------------------------------------------------------------------
+#  Normalisation (REPRODUCIBILITY.md §2)
+# ---------------------------------------------------------------------------
+normalisation:
+  method: "min_max"               # Global method
+  winsorise:
+    lower_percentile: 2
+    upper_percentile: 98
+  refresh_trigger: "power_of_two" # Recompute at |CB| = 8, 16, 32, …
+  unseen_categorical_distance: 1.0
+
+# ---------------------------------------------------------------------------
+#  Policy Configurations
+# ---------------------------------------------------------------------------
+policy:
+  num_configurations: 100
+  rule_count_range: [5, 60]
+  hierarchy_depth_range: [1, 5]
+  condition_count_range: [0, 15]
+  combiners:
+    - "first-applicable"
+    - "deny-overrides"
+    - "permit-overrides"
+    - "only-one-applicable"
+  default_effects: ["Permit", "Deny"]
+  modification_levels: [0.10, 0.20, 0.30]
+
+# ---------------------------------------------------------------------------
+#  Runs
+# ---------------------------------------------------------------------------
+runs:
+  R: 30
+  configurations:
+    - "from_scratch"
+    - "cbr_only"
+    - "rl_only"
+    - "cbr_rl"
+  output_dir: "data/results/"
+  output_format: "json"

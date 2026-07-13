@@ -1,0 +1,75 @@
+{
+  "cases": [
+    {
+      "case_id": "seed_01",
+      "rule_set": ["R1", "R2", "R3", "R4", "R5"],
+      "subject_depth": 2,
+      "object_depth": 1,
+      "num_conditions": 3,
+      "conflict_resolution": "deny-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {"test_id": "t01", "request": {"subject": {"role": "DOC"}, "action": {"action-id": "read"}, "resource": {"resource-type": "med-rec"}}, "expected": "Permit"},
+        {"test_id": "t02", "request": {"subject": {"role": "NUR"}, "action": {"action-id": "write"}, "resource": {"resource-type": "med-rec"}}, "expected": "Deny"}
+      ]
+    },
+    {
+      "case_id": "seed_02",
+      "rule_set": ["R1", "R2", "R3", "R6", "R7", "R8"],
+      "subject_depth": 2,
+      "object_depth": 2,
+      "num_conditions": 4,
+      "conflict_resolution": "first-applicable",
+      "default_effect": "Deny",
+      "combination_algorithm": "first-applicable",
+      "test_suite": [
+        {"test_id": "t03", "request": {"subject": {"role": "LAB"}, "action": {"action-id": "read"}, "resource": {"resource-type": "lab-res"}}, "expected": "Permit"},
+        {"test_id": "t04", "request": {"subject": {"role": "ADM"}, "action": {"action-id": "read"}, "resource": {"resource-type": "billing"}}, "expected": "Permit"}
+      ]
+    },
+    {
+      "case_id": "seed_03",
+      "rule_set": ["R1", "R9", "R10", "R11"],
+      "subject_depth": 1,
+      "object_depth": 1,
+      "num_conditions": 2,
+      "conflict_resolution": "deny-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {"test_id": "t05", "request": {"subject": {"role": "DOC"}, "action": {"action-id": "delete"}, "resource": {"resource-type": "med-rec"}}, "expected": "Deny"},
+        {"test_id": "t06", "request": {"subject": {"role": "PAT"}, "action": {"action-id": "read"}, "resource": {"resource-type": "med-rec"}}, "expected": "Permit"}
+      ]
+    },
+    {
+      "case_id": "seed_04",
+      "rule_set": ["R14", "R15", "R16", "R17", "R18"],
+      "subject_depth": 1,
+      "object_depth": 2,
+      "num_conditions": 1,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "permit-overrides",
+      "test_suite": [
+        {"test_id": "t07", "request": {"subject": {"role": "ADM"}, "action": {"action-id": "read"}, "resource": {"resource-type": "med-rec"}}, "expected": "Deny"},
+        {"test_id": "t08", "request": {"subject": {"role": "ADM"}, "action": {"action-id": "write"}, "resource": {"resource-type": "billing"}}, "expected": "Permit"}
+      ]
+    },
+    {
+      "case_id": "seed_05",
+      "rule_set": ["R21", "R22", "R23", "R24", "R25", "R26", "R27"],
+      "subject_depth": 3,
+      "object_depth": 2,
+      "num_conditions": 4,
+      "conflict_resolution": "deny-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {"test_id": "t09", "request": {"subject": {"role": "AUD"}, "action": {"action-id": "read"}, "resource": {"resource-type": "med-rec"}, "environment": {"audit-window-open": "true"}}, "expected": "Permit"},
+        {"test_id": "t10", "request": {"subject": {"role": "DOC"}, "action": {"action-id": "export"}, "resource": {"resource-type": "med-rec"}}, "expected": "Deny"}
+      ]
+    }
+  ],
+  "size": 5
+}

@@ -1,0 +1,76 @@
+{
+  "type": "PolicySet",
+  "policy_set_id": "cal_01",
+  "combiner": "deny-overrides",
+  "rules": [
+    {
+      "rule_id": "R001",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R002",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R003",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R004",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R005",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R006",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R007",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R008",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R009",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R010",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R011",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R012",
+      "effect": "Deny",
+      "conditions": []
+    }
+  ],
+  "policy_sets": [],
+  "metadata": {
+    "id": "cal_01",
+    "rules": 12,
+    "conditions": 4,
+    "depth": 2,
+    "combiner": "deny-overrides",
+    "description": "Synthetic (small)"
+  }
+}

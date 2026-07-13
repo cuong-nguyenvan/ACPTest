@@ -1,0 +1,35 @@
+# =============================================================================
+#  ACPTest — MedSafe Hospital Case Study Configuration
+#  Inherits from experiment.yaml with case-study-specific overrides.
+# =============================================================================
+
+inherit: "configs/experiment.yaml"
+
+experiment:
+  name: "MedSafe_HIS_case_study"
+  description: "Single-seed walkthrough on realistic hospital policy"
+
+overrides:
+  cbr:
+    case_base:
+      init_file: "data/case_study/case_base_42.json"
+      init_size: 42
+
+  runs:
+    R: 1
+    seeds: [813]
+    output_dir: "data/case_study/results/"
+
+  runner:
+    trace_enabled: true
+    trace_format: "json"
+
+  policy:
+    files:
+      v1_0: "data/case_study/medsafe_root.xml"
+      v1_1: "data/case_study/medsafe_v1.1.xml"
+      v1_2: "data/case_study/medsafe_v1.2.xml"
+
+  mutation:
+    policy_file: "data/case_study/medsafe_root.xml"
+    output_dir: "data/case_study/mutants/"

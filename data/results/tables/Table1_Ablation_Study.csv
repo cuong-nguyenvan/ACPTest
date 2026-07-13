@@ -1,0 +1,5 @@
+Configuration,Test_Cases_modelled,Coverage_%_modelled,Fault_Detection_%_modelled,Redundancy_%_modelled
+From-scratch,36.75 ± 0.59,51.55 ± 1.11,36.95 ± 1.61,37.66 ± 0.63
+CBR only,20.45 ± 0.31,83.26 ± 1.50,71.98 ± 1.74,22.50 ± 0.46
+RL only,28.33 ± 0.37,76.10 ± 1.09,64.13 ± 1.69,32.25 ± 0.60
+CBR + RL (ACPTest),21.04 ± 0.25,90.73 ± 1.18,86.22 ± 1.14,4.19 ± 0.22

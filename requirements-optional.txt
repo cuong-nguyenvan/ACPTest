@@ -1,0 +1,12 @@
+# Optional dependencies — not required for core experiments
+# Install: pip install -r requirements-optional.txt
+
+# Z3 solver for Stage 1 equivalence detection
+# If absent, Stage 1 is skipped; Stages 2-3 still operate normally
+z3-solver==4.12.4.0
+
+# Additional analysis tools (not imported in current codebase,
+# included for extended analysis workflows)
+scikit-learn==1.3.2
+statsmodels==0.14.1
+tqdm==4.66.1

@@ -1,0 +1,6338 @@
+{
+  "cases": [
+    {
+      "case_id": "case_001",
+      "rule_set": [
+        "R01",
+        "R04",
+        "R06",
+        "R07",
+        "R09",
+        "R11",
+        "R13",
+        "R18",
+        "R20",
+        "R22",
+        "R24",
+        "R25",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 3,
+      "object_depth": 1,
+      "num_conditions": 10,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Permit",
+      "combination_algorithm": "first-applicable",
+      "test_suite": [
+        {
+          "test_id": "c01_t01",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c01_t02",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c01_t03",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c01_t04",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c01_t05",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c01_t06",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c01_t07",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c01_t08",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_001",
+        "created": "2026-05-24"
+      }
+    },
+    {
+      "case_id": "case_002",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "RX0"
+      ],
+      "subject_depth": 1,
+      "object_depth": 2,
+      "num_conditions": 9,
+      "conflict_resolution": "first-applicable",
+      "default_effect": "Deny",
+      "combination_algorithm": "only-one-applicable",
+      "test_suite": [
+        {
+          "test_id": "c02_t01",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c02_t02",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c02_t03",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_002",
+        "created": "2026-05-24"
+      }
+    },
+    {
+      "case_id": "case_003",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "RX0",
+        "RX1",
+        "RX2"
+      ],
+      "subject_depth": 1,
+      "object_depth": 3,
+      "num_conditions": 12,
+      "conflict_resolution": "only-one-applicable",
+      "default_effect": "Permit",
+      "combination_algorithm": "first-applicable",
+      "test_suite": [
+        {
+          "test_id": "c03_t01",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c03_t02",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c03_t03",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c03_t04",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c03_t05",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c03_t06",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c03_t07",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_003",
+        "created": "2026-01-27"
+      }
+    },
+    {
+      "case_id": "case_004",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R05",
+        "R06",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 4,
+      "object_depth": 2,
+      "num_conditions": 2,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Permit",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c04_t01",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c04_t02",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c04_t03",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c04_t04",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_004",
+        "created": "2026-02-09"
+      }
+    },
+    {
+      "case_id": "case_005",
+      "rule_set": [
+        "R02",
+        "R04",
+        "R06",
+        "R07",
+        "R12",
+        "R14",
+        "R15",
+        "R19",
+        "R20",
+        "R22",
+        "R24",
+        "R26"
+      ],
+      "subject_depth": 1,
+      "object_depth": 2,
+      "num_conditions": 10,
+      "conflict_resolution": "deny-overrides",
+      "default_effect": "Permit",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c05_t01",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c05_t02",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c05_t03",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c05_t04",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c05_t05",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c05_t06",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c05_t07",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_005",
+        "created": "2026-04-03"
+      }
+    },
+    {
+      "case_id": "case_006",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 1,
+      "object_depth": 1,
+      "num_conditions": 7,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c06_t01",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c06_t02",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c06_t03",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c06_t04",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c06_t05",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c06_t06",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_006",
+        "created": "2026-02-10"
+      }
+    },
+    {
+      "case_id": "case_007",
+      "rule_set": [
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R17",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R25",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 1,
+      "object_depth": 3,
+      "num_conditions": 3,
+      "conflict_resolution": "first-applicable",
+      "default_effect": "Deny",
+      "combination_algorithm": "permit-overrides",
+      "test_suite": [
+        {
+          "test_id": "c07_t01",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c07_t02",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c07_t03",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c07_t04",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_007",
+        "created": "2026-05-15"
+      }
+    },
+    {
+      "case_id": "case_008",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 3,
+      "object_depth": 1,
+      "num_conditions": 5,
+      "conflict_resolution": "only-one-applicable",
+      "default_effect": "Permit",
+      "combination_algorithm": "permit-overrides",
+      "test_suite": [
+        {
+          "test_id": "c08_t01",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c08_t02",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c08_t03",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c08_t04",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c08_t05",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c08_t06",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c08_t07",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_008",
+        "created": "2026-04-16"
+      }
+    },
+    {
+      "case_id": "case_009",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R07",
+        "R09",
+        "R15",
+        "R16",
+        "R17",
+        "R21",
+        "R22",
+        "R24",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 2,
+      "object_depth": 2,
+      "num_conditions": 6,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "only-one-applicable",
+      "test_suite": [
+        {
+          "test_id": "c09_t01",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c09_t02",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c09_t03",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c09_t04",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c09_t05",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c09_t06",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c09_t07",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_009",
+        "created": "2026-06-06"
+      }
+    },
+    {
+      "case_id": "case_010",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 3,
+      "object_depth": 2,
+      "num_conditions": 0,
+      "conflict_resolution": "deny-overrides",
+      "default_effect": "Permit",
+      "combination_algorithm": "only-one-applicable",
+      "test_suite": [
+        {
+          "test_id": "c10_t01",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c10_t02",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c10_t03",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c10_t04",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_010",
+        "created": "2026-05-17"
+      }
+    },
+    {
+      "case_id": "case_011",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R08",
+        "R09",
+        "R11",
+        "R12",
+        "R15",
+        "R16",
+        "R18",
+        "R20",
+        "R21",
+        "R22",
+        "R24",
+        "R25",
+        "R26"
+      ],
+      "subject_depth": 2,
+      "object_depth": 1,
+      "num_conditions": 0,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "first-applicable",
+      "test_suite": [
+        {
+          "test_id": "c11_t01",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c11_t02",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c11_t03",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c11_t04",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c11_t05",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c11_t06",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c11_t07",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c11_t08",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_011",
+        "created": "2026-04-24"
+      }
+    },
+    {
+      "case_id": "case_012",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R11",
+        "R12",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 1,
+      "object_depth": 3,
+      "num_conditions": 14,
+      "conflict_resolution": "deny-overrides",
+      "default_effect": "Permit",
+      "combination_algorithm": "permit-overrides",
+      "test_suite": [
+        {
+          "test_id": "c12_t01",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c12_t02",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c12_t03",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c12_t04",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c12_t05",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c12_t06",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c12_t07",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c12_t08",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_012",
+        "created": "2026-02-27"
+      }
+    },
+    {
+      "case_id": "case_013",
+      "rule_set": [
+        "R01",
+        "R05",
+        "R08",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R22",
+        "R23",
+        "R26"
+      ],
+      "subject_depth": 4,
+      "object_depth": 1,
+      "num_conditions": 11,
+      "conflict_resolution": "only-one-applicable",
+      "default_effect": "Permit",
+      "combination_algorithm": "first-applicable",
+      "test_suite": [
+        {
+          "test_id": "c13_t01",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c13_t02",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c13_t03",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c13_t04",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c13_t05",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_013",
+        "created": "2026-01-24"
+      }
+    },
+    {
+      "case_id": "case_014",
+      "rule_set": [
+        "R01",
+        "R03",
+        "R04",
+        "R06",
+        "R07",
+        "R14",
+        "R17",
+        "R19",
+        "R21",
+        "R23",
+        "R26"
+      ],
+      "subject_depth": 3,
+      "object_depth": 3,
+      "num_conditions": 13,
+      "conflict_resolution": "only-one-applicable",
+      "default_effect": "Deny",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c14_t01",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c14_t02",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c14_t03",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c14_t04",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c14_t05",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c14_t06",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c14_t07",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_014",
+        "created": "2026-01-16"
+      }
+    },
+    {
+      "case_id": "case_015",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 2,
+      "object_depth": 2,
+      "num_conditions": 6,
+      "conflict_resolution": "first-applicable",
+      "default_effect": "Permit",
+      "combination_algorithm": "permit-overrides",
+      "test_suite": [
+        {
+          "test_id": "c15_t01",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c15_t02",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c15_t03",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c15_t04",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_015",
+        "created": "2026-04-01"
+      }
+    },
+    {
+      "case_id": "case_016",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "RX0",
+        "RX1"
+      ],
+      "subject_depth": 2,
+      "object_depth": 3,
+      "num_conditions": 5,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c16_t01",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c16_t02",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c16_t03",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c16_t04",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c16_t05",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c16_t06",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_016",
+        "created": "2026-01-27"
+      }
+    },
+    {
+      "case_id": "case_017",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R12",
+        "R13",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R21",
+        "R22",
+        "R24"
+      ],
+      "subject_depth": 2,
+      "object_depth": 2,
+      "num_conditions": 2,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "permit-overrides",
+      "test_suite": [
+        {
+          "test_id": "c17_t01",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c17_t02",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c17_t03",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c17_t04",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c17_t05",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_017",
+        "created": "2026-04-27"
+      }
+    },
+    {
+      "case_id": "case_018",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 2,
+      "object_depth": 1,
+      "num_conditions": 0,
+      "conflict_resolution": "deny-overrides",
+      "default_effect": "Permit",
+      "combination_algorithm": "only-one-applicable",
+      "test_suite": [
+        {
+          "test_id": "c18_t01",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c18_t02",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c18_t03",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c18_t04",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c18_t05",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c18_t06",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c18_t07",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c18_t08",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_018",
+        "created": "2026-06-24"
+      }
+    },
+    {
+      "case_id": "case_019",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R09",
+        "R10",
+        "R11",
+        "R14",
+        "R20",
+        "R23",
+        "R25",
+        "R26"
+      ],
+      "subject_depth": 1,
+      "object_depth": 1,
+      "num_conditions": 0,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Permit",
+      "combination_algorithm": "only-one-applicable",
+      "test_suite": [
+        {
+          "test_id": "c19_t01",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c19_t02",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c19_t03",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c19_t04",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c19_t05",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c19_t06",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c19_t07",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c19_t08",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_019",
+        "created": "2026-05-20"
+      }
+    },
+    {
+      "case_id": "case_020",
+      "rule_set": [
+        "R01",
+        "R07",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R14",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R25",
+        "R26"
+      ],
+      "subject_depth": 1,
+      "object_depth": 1,
+      "num_conditions": 1,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "permit-overrides",
+      "test_suite": [
+        {
+          "test_id": "c20_t01",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c20_t02",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c20_t03",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c20_t04",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c20_t05",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c20_t06",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c20_t07",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_020",
+        "created": "2026-01-09"
+      }
+    },
+    {
+      "case_id": "case_021",
+      "rule_set": [
+        "R01",
+        "R03",
+        "R04",
+        "R08",
+        "R09",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26"
+      ],
+      "subject_depth": 3,
+      "object_depth": 3,
+      "num_conditions": 1,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "permit-overrides",
+      "test_suite": [
+        {
+          "test_id": "c21_t01",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c21_t02",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c21_t03",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c21_t04",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_021",
+        "created": "2026-01-16"
+      }
+    },
+    {
+      "case_id": "case_022",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R25",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 2,
+      "object_depth": 2,
+      "num_conditions": 3,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c22_t01",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c22_t02",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c22_t03",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c22_t04",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c22_t05",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c22_t06",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_022",
+        "created": "2026-05-17"
+      }
+    },
+    {
+      "case_id": "case_023",
+      "rule_set": [
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R09",
+        "R13",
+        "R15",
+        "R16",
+        "R17",
+        "R19",
+        "R20",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27"
+      ],
+      "subject_depth": 2,
+      "object_depth": 2,
+      "num_conditions": 12,
+      "conflict_resolution": "deny-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c23_t01",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c23_t02",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c23_t03",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c23_t04",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c23_t05",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c23_t06",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c23_t07",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_023",
+        "created": "2026-05-12"
+      }
+    },
+    {
+      "case_id": "case_024",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "RX0",
+        "RX1",
+        "RX2"
+      ],
+      "subject_depth": 3,
+      "object_depth": 2,
+      "num_conditions": 13,
+      "conflict_resolution": "deny-overrides",
+      "default_effect": "Permit",
+      "combination_algorithm": "first-applicable",
+      "test_suite": [
+        {
+          "test_id": "c24_t01",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c24_t02",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c24_t03",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c24_t04",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c24_t05",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c24_t06",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_024",
+        "created": "2026-02-27"
+      }
+    },
+    {
+      "case_id": "case_025",
+      "rule_set": [
+        "R03",
+        "R06",
+        "R07",
+        "R08",
+        "R12",
+        "R14",
+        "R18",
+        "R19",
+        "R21",
+        "R22",
+        "R23"
+      ],
+      "subject_depth": 4,
+      "object_depth": 2,
+      "num_conditions": 4,
+      "conflict_resolution": "only-one-applicable",
+      "default_effect": "Deny",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c25_t01",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c25_t02",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c25_t03",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c25_t04",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_025",
+        "created": "2026-05-12"
+      }
+    },
+    {
+      "case_id": "case_026",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R08",
+        "R09",
+        "R11",
+        "R12",
+        "R14",
+        "R16",
+        "R19",
+        "R20",
+        "R22",
+        "R23",
+        "R24"
+      ],
+      "subject_depth": 3,
+      "object_depth": 1,
+      "num_conditions": 10,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c26_t01",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c26_t02",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c26_t03",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c26_t04",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c26_t05",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c26_t06",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c26_t07",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c26_t08",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_026",
+        "created": "2026-02-18"
+      }
+    },
+    {
+      "case_id": "case_027",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "RX0",
+        "RX1"
+      ],
+      "subject_depth": 2,
+      "object_depth": 3,
+      "num_conditions": 9,
+      "conflict_resolution": "only-one-applicable",
+      "default_effect": "Permit",
+      "combination_algorithm": "permit-overrides",
+      "test_suite": [
+        {
+          "test_id": "c27_t01",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c27_t02",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c27_t03",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c27_t04",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c27_t05",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c27_t06",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_027",
+        "created": "2026-02-13"
+      }
+    },
+    {
+      "case_id": "case_028",
+      "rule_set": [
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R13",
+        "R14",
+        "R15",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R22",
+        "R23",
+        "R24",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 2,
+      "object_depth": 3,
+      "num_conditions": 15,
+      "conflict_resolution": "first-applicable",
+      "default_effect": "Deny",
+      "combination_algorithm": "permit-overrides",
+      "test_suite": [
+        {
+          "test_id": "c28_t01",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c28_t02",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c28_t03",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c28_t04",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_028",
+        "created": "2026-04-03"
+      }
+    },
+    {
+      "case_id": "case_029",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R24",
+        "R25",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 1,
+      "object_depth": 2,
+      "num_conditions": 5,
+      "conflict_resolution": "only-one-applicable",
+      "default_effect": "Permit",
+      "combination_algorithm": "permit-overrides",
+      "test_suite": [
+        {
+          "test_id": "c29_t01",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c29_t02",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c29_t03",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c29_t04",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_029",
+        "created": "2026-05-17"
+      }
+    },
+    {
+      "case_id": "case_030",
+      "rule_set": [
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R08",
+        "R09",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R21",
+        "R23",
+        "R25",
+        "R26"
+      ],
+      "subject_depth": 4,
+      "object_depth": 1,
+      "num_conditions": 5,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Permit",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c30_t01",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c30_t02",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c30_t03",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c30_t04",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c30_t05",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c30_t06",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c30_t07",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_030",
+        "created": "2026-02-02"
+      }
+    },
+    {
+      "case_id": "case_031",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R15",
+        "R16",
+        "R17",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R24",
+        "R25",
+        "R27"
+      ],
+      "subject_depth": 3,
+      "object_depth": 1,
+      "num_conditions": 3,
+      "conflict_resolution": "only-one-applicable",
+      "default_effect": "Permit",
+      "combination_algorithm": "first-applicable",
+      "test_suite": [
+        {
+          "test_id": "c31_t01",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c31_t02",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c31_t03",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c31_t04",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c31_t05",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_031",
+        "created": "2026-03-04"
+      }
+    },
+    {
+      "case_id": "case_032",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 2,
+      "object_depth": 2,
+      "num_conditions": 9,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "first-applicable",
+      "test_suite": [
+        {
+          "test_id": "c32_t01",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c32_t02",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c32_t03",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c32_t04",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c32_t05",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c32_t06",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_032",
+        "created": "2026-01-18"
+      }
+    },
+    {
+      "case_id": "case_033",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 1,
+      "object_depth": 1,
+      "num_conditions": 13,
+      "conflict_resolution": "deny-overrides",
+      "default_effect": "Deny",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c33_t01",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c33_t02",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c33_t03",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c33_t04",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_033",
+        "created": "2026-01-09"
+      }
+    },
+    {
+      "case_id": "case_034",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "RX0",
+        "RX1"
+      ],
+      "subject_depth": 1,
+      "object_depth": 2,
+      "num_conditions": 11,
+      "conflict_resolution": "only-one-applicable",
+      "default_effect": "Deny",
+      "combination_algorithm": "permit-overrides",
+      "test_suite": [
+        {
+          "test_id": "c34_t01",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c34_t02",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c34_t03",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c34_t04",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c34_t05",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c34_t06",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c34_t07",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_034",
+        "created": "2026-02-10"
+      }
+    },
+    {
+      "case_id": "case_035",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "RX0",
+        "RX1"
+      ],
+      "subject_depth": 2,
+      "object_depth": 1,
+      "num_conditions": 12,
+      "conflict_resolution": "permit-overrides",
+      "default_effect": "Permit",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c35_t01",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c35_t02",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c35_t03",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c35_t04",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c35_t05",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c35_t06",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c35_t07",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_035",
+        "created": "2026-01-14"
+      }
+    },
+    {
+      "case_id": "case_036",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R11",
+        "R14",
+        "R16",
+        "R17",
+        "R18",
+        "R21",
+        "R22",
+        "R25",
+        "R26"
+      ],
+      "subject_depth": 4,
+      "object_depth": 3,
+      "num_conditions": 4,
+      "conflict_resolution": "only-one-applicable",
+      "default_effect": "Permit",
+      "combination_algorithm": "only-one-applicable",
+      "test_suite": [
+        {
+          "test_id": "c36_t01",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c36_t02",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c36_t03",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c36_t04",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_036",
+        "created": "2026-05-05"
+      }
+    },
+    {
+      "case_id": "case_037",
+      "rule_set": [
+        "R01",
+        "R03",
+        "R05",
+        "R07",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R18",
+        "R19",
+        "R20",
+        "R22",
+        "R25"
+      ],
+      "subject_depth": 1,
+      "object_depth": 2,
+      "num_conditions": 15,
+      "conflict_resolution": "deny-overrides",
+      "default_effect": "Permit",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c37_t01",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c37_t02",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c37_t03",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_037",
+        "created": "2026-03-20"
+      }
+    },
+    {
+      "case_id": "case_038",
+      "rule_set": [
+        "R03",
+        "R06",
+        "R07",
+        "R09",
+        "R10",
+        "R11",
+        "R13",
+        "R14",
+        "R17",
+        "R18",
+        "R20",
+        "R21",
+        "R22",
+        "R25",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 3,
+      "object_depth": 1,
+      "num_conditions": 6,
+      "conflict_resolution": "only-one-applicable",
+      "default_effect": "Deny",
+      "combination_algorithm": "permit-overrides",
+      "test_suite": [
+        {
+          "test_id": "c38_t01",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c38_t02",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c38_t03",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_038",
+        "created": "2026-02-20"
+      }
+    },
+    {
+      "case_id": "case_039",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27"
+      ],
+      "subject_depth": 4,
+      "object_depth": 1,
+      "num_conditions": 6,
+      "conflict_resolution": "first-applicable",
+      "default_effect": "Permit",
+      "combination_algorithm": "only-one-applicable",
+      "test_suite": [
+        {
+          "test_id": "c39_t01",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c39_t02",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c39_t03",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c39_t04",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c39_t05",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c39_t06",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c39_t07",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c39_t08",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_039",
+        "created": "2026-02-13"
+      }
+    },
+    {
+      "case_id": "case_040",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "RX0",
+        "RX1",
+        "RX2"
+      ],
+      "subject_depth": 2,
+      "object_depth": 3,
+      "num_conditions": 3,
+      "conflict_resolution": "only-one-applicable",
+      "default_effect": "Permit",
+      "combination_algorithm": "only-one-applicable",
+      "test_suite": [
+        {
+          "test_id": "c40_t01",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c40_t02",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c40_t03",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c40_t04",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c40_t05",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c40_t06",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c40_t07",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c40_t08",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_040",
+        "created": "2026-04-08"
+      }
+    },
+    {
+      "case_id": "case_041",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R07",
+        "R08",
+        "R10",
+        "R11",
+        "R12",
+        "R14",
+        "R15",
+        "R17",
+        "R20",
+        "R22",
+        "R24",
+        "R25",
+        "R26"
+      ],
+      "subject_depth": 3,
+      "object_depth": 2,
+      "num_conditions": 2,
+      "conflict_resolution": "deny-overrides",
+      "default_effect": "Permit",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c41_t01",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c41_t02",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c41_t03",
+          "request": {
+            "subject": {
+              "role": "NUR"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c41_t04",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c41_t05",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c41_t06",
+          "request": {
+            "subject": {
+              "role": "ADM"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c41_t07",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Permit"
+        },
+        {
+          "test_id": "c41_t08",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "delete"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "Deny"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_041",
+        "created": "2026-03-11"
+      }
+    },
+    {
+      "case_id": "case_042",
+      "rule_set": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "RX0"
+      ],
+      "subject_depth": 1,
+      "object_depth": 2,
+      "num_conditions": 2,
+      "conflict_resolution": "first-applicable",
+      "default_effect": "Permit",
+      "combination_algorithm": "deny-overrides",
+      "test_suite": [
+        {
+          "test_id": "c42_t01",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "export"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c42_t02",
+          "request": {
+            "subject": {
+              "role": "PAT"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "Deny"
+        },
+        {
+          "test_id": "c42_t03",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "write"
+            },
+            "resource": {
+              "resource-type": "billing"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "true"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c42_t04",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "print"
+            },
+            "resource": {
+              "resource-type": "admin"
+            },
+            "environment": {
+              "shift-active": "true",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c42_t05",
+          "request": {
+            "subject": {
+              "role": "DOC"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c42_t06",
+          "request": {
+            "subject": {
+              "role": "AUD"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "med-rec"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        },
+        {
+          "test_id": "c42_t07",
+          "request": {
+            "subject": {
+              "role": "LAB"
+            },
+            "action": {
+              "action-id": "read"
+            },
+            "resource": {
+              "resource-type": "lab-res"
+            },
+            "environment": {
+              "shift-active": "false",
+              "audit-window-open": "false"
+            }
+          },
+          "expected": "NotApplicable"
+        }
+      ],
+      "metadata": {
+        "source_policy": "policy_variant_042",
+        "created": "2026-03-04"
+      }
+    }
+  ],
+  "size": 42
+}

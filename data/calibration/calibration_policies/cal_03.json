@@ -1,0 +1,241 @@
+{
+  "type": "PolicySet",
+  "policy_set_id": "cal_03",
+  "combiner": "permit-overrides",
+  "rules": [
+    {
+      "rule_id": "R001",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R002",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R003",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R004",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R005",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R006",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R007",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R008",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R009",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R010",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R011",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R012",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R013",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R014",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R015",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R016",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R017",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R018",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R019",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R020",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R021",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R022",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R023",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R024",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R025",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R026",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R027",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R028",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R029",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R030",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R031",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R032",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R033",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R034",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R035",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R036",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R037",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R038",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R039",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R040",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R041",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R042",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R043",
+      "effect": "Permit",
+      "conditions": []
+    },
+    {
+      "rule_id": "R044",
+      "effect": "Deny",
+      "conditions": []
+    },
+    {
+      "rule_id": "R045",
+      "effect": "Permit",
+      "conditions": []
+    }
+  ],
+  "policy_sets": [],
+  "metadata": {
+    "id": "cal_03",
+    "rules": 45,
+    "conditions": 14,
+    "depth": 4,
+    "combiner": "permit-overrides",
+    "description": "Synthetic (large)"
+  }
+}

@@ -1,0 +1,25 @@
+Comparison,Metric,Mean_Diff_MeanSD,Paired_t,p_ttest,Wilcoxon_W,p_wilcoxon,Cohen_d,Effect,Sig
+CBR+RL vs From-scratch,Coverage % (modelled),+39.182 ± 0.592,362.331,< 1e-6,0.0,< 1e-6,66.152,very large,***
+CBR+RL vs From-scratch,Fault Detection % (modelled),+49.270 ± 1.782,151.466,< 1e-6,0.0,< 1e-6,27.654,very large,***
+CBR+RL vs From-scratch,Redundancy % (modelled),-33.471 ± 0.724,-253.299,< 1e-6,0.0,< 1e-6,-46.246,very large,***
+CBR+RL vs From-scratch,Test Cases (modelled),-15.704 ± 0.701,-122.648,< 1e-6,0.0,< 1e-6,-22.392,very large,***
+CBR+RL vs CBR only,Coverage % (modelled),+7.474 ± 0.735,55.692,< 1e-6,0.0,< 1e-6,10.168,very large,***
+CBR+RL vs CBR only,Fault Detection % (modelled),+14.239 ± 1.269,61.468,< 1e-6,0.0,< 1e-6,11.222,very large,***
+CBR+RL vs CBR only,Redundancy % (modelled),-18.312 ± 0.505,-198.431,< 1e-6,0.0,< 1e-6,-36.228,very large,***
+CBR+RL vs CBR only,Test Cases (modelled),+0.593 ± 0.404,8.036,< 1e-6,13.0,< 1e-6,1.467,very large,***
+CBR+RL vs RL only,Coverage % (modelled),+14.635 ± 1.153,69.536,< 1e-6,0.0,< 1e-6,12.696,very large,***
+CBR+RL vs RL only,Fault Detection % (modelled),+22.091 ± 1.827,66.238,< 1e-6,0.0,< 1e-6,12.093,very large,***
+CBR+RL vs RL only,Redundancy % (modelled),-28.060 ± 0.650,-236.517,< 1e-6,0.0,< 1e-6,-43.182,very large,***
+CBR+RL vs RL only,Test Cases (modelled),-7.283 ± 0.424,-94.102,< 1e-6,0.0,< 1e-6,-17.181,very large,***
+CBR only vs From-scratch,Coverage % (modelled),+31.708 ± 0.824,210.888,< 1e-6,0.0,< 1e-6,38.503,very large,***
+CBR only vs From-scratch,Fault Detection % (modelled),+35.031 ± 2.424,79.146,< 1e-6,0.0,< 1e-6,14.45,very large,***
+CBR only vs From-scratch,Redundancy % (modelled),-15.160 ± 0.794,-104.629,< 1e-6,0.0,< 1e-6,-19.103,very large,***
+CBR only vs From-scratch,Test Cases (modelled),-16.296 ± 0.681,-131.09,< 1e-6,0.0,< 1e-6,-23.934,very large,***
+RL only vs From-scratch,Coverage % (modelled),+24.548 ± 0.943,142.517,< 1e-6,0.0,< 1e-6,26.02,very large,***
+RL only vs From-scratch,Fault Detection % (modelled),+27.179 ± 2.128,69.956,< 1e-6,0.0,< 1e-6,12.772,very large,***
+RL only vs From-scratch,Redundancy % (modelled),-5.412 ± 0.759,-39.039,< 1e-6,0.0,< 1e-6,-7.128,very large,***
+RL only vs From-scratch,Test Cases (modelled),-8.421 ± 0.723,-63.823,< 1e-6,0.0,< 1e-6,-11.652,very large,***
+CBR only vs RL only,Coverage % (modelled),+7.160 ± 1.371,28.615,< 1e-6,0.0,< 1e-6,5.224,very large,***
+CBR only vs RL only,Fault Detection % (modelled),+7.853 ± 1.820,23.63,< 1e-6,0.0,< 1e-6,4.314,very large,***
+CBR only vs RL only,Redundancy % (modelled),-9.748 ± 0.802,-66.61,< 1e-6,0.0,< 1e-6,-12.161,very large,***
+CBR only vs RL only,Test Cases (modelled),-7.875 ± 0.481,-89.717,< 1e-6,0.0,< 1e-6,-16.38,very large,***

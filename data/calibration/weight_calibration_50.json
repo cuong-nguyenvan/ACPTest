@@ -1,0 +1,1256 @@
+{
+  "description": "50 labelled policy pairs for similarity weight calibration (LOO-CV)",
+  "cohen_kappa": 0.82,
+  "pairs": [
+    {
+      "pair_id": 1,
+      "policy_a": {
+        "policy_id": "cal_p001",
+        "num_rules": 12,
+        "subject_depth": 2,
+        "object_depth": 1,
+        "num_conditions": 2,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p002",
+        "num_rules": 32,
+        "subject_depth": 1,
+        "object_depth": 1,
+        "num_conditions": 1,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "discussion"
+    },
+    {
+      "pair_id": 2,
+      "policy_a": {
+        "policy_id": "cal_p003",
+        "num_rules": 17,
+        "subject_depth": 4,
+        "object_depth": 3,
+        "num_conditions": 4,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p004",
+        "num_rules": 20,
+        "subject_depth": 4,
+        "object_depth": 3,
+        "num_conditions": 5,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 3,
+      "policy_a": {
+        "policy_id": "cal_p005",
+        "num_rules": 32,
+        "subject_depth": 2,
+        "object_depth": 2,
+        "num_conditions": 1,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p006",
+        "num_rules": 32,
+        "subject_depth": 2,
+        "object_depth": 2,
+        "num_conditions": 0,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 4,
+      "policy_a": {
+        "policy_id": "cal_p007",
+        "num_rules": 27,
+        "subject_depth": 1,
+        "object_depth": 3,
+        "num_conditions": 7,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p008",
+        "num_rules": 10,
+        "subject_depth": 3,
+        "object_depth": 3,
+        "num_conditions": 9,
+        "combiner": "permit-overrides",
+        "default_effect": "Permit"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "discussion"
+    },
+    {
+      "pair_id": 5,
+      "policy_a": {
+        "policy_id": "cal_p009",
+        "num_rules": 19,
+        "subject_depth": 2,
+        "object_depth": 1,
+        "num_conditions": 6,
+        "combiner": "permit-overrides",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p010",
+        "num_rules": 28,
+        "subject_depth": 2,
+        "object_depth": 2,
+        "num_conditions": 5,
+        "combiner": "first-applicable",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 6,
+      "policy_a": {
+        "policy_id": "cal_p011",
+        "num_rules": 9,
+        "subject_depth": 2,
+        "object_depth": 1,
+        "num_conditions": 7,
+        "combiner": "only-one-applicable",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p012",
+        "num_rules": 40,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 5,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 7,
+      "policy_a": {
+        "policy_id": "cal_p013",
+        "num_rules": 30,
+        "subject_depth": 3,
+        "object_depth": 1,
+        "num_conditions": 10,
+        "combiner": "only-one-applicable",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p014",
+        "num_rules": 30,
+        "subject_depth": 3,
+        "object_depth": 1,
+        "num_conditions": 11,
+        "combiner": "only-one-applicable",
+        "default_effect": "Deny"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 8,
+      "policy_a": {
+        "policy_id": "cal_p015",
+        "num_rules": 34,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 8,
+        "combiner": "permit-overrides",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p016",
+        "num_rules": 33,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 9,
+        "combiner": "permit-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 9,
+      "policy_a": {
+        "policy_id": "cal_p017",
+        "num_rules": 30,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 7,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p018",
+        "num_rules": 30,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 6,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 10,
+      "policy_a": {
+        "policy_id": "cal_p019",
+        "num_rules": 14,
+        "subject_depth": 4,
+        "object_depth": 3,
+        "num_conditions": 1,
+        "combiner": "only-one-applicable",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p020",
+        "num_rules": 34,
+        "subject_depth": 3,
+        "object_depth": 3,
+        "num_conditions": 0,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 11,
+      "policy_a": {
+        "policy_id": "cal_p021",
+        "num_rules": 23,
+        "subject_depth": 1,
+        "object_depth": 3,
+        "num_conditions": 11,
+        "combiner": "permit-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p022",
+        "num_rules": 24,
+        "subject_depth": 1,
+        "object_depth": 3,
+        "num_conditions": 12,
+        "combiner": "permit-overrides",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 12,
+      "policy_a": {
+        "policy_id": "cal_p023",
+        "num_rules": 11,
+        "subject_depth": 2,
+        "object_depth": 1,
+        "num_conditions": 5,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p024",
+        "num_rules": 25,
+        "subject_depth": 4,
+        "object_depth": 1,
+        "num_conditions": 1,
+        "combiner": "permit-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 13,
+      "policy_a": {
+        "policy_id": "cal_p025",
+        "num_rules": 10,
+        "subject_depth": 1,
+        "object_depth": 3,
+        "num_conditions": 12,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p026",
+        "num_rules": 35,
+        "subject_depth": 2,
+        "object_depth": 2,
+        "num_conditions": 8,
+        "combiner": "only-one-applicable",
+        "default_effect": "Permit"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 14,
+      "policy_a": {
+        "policy_id": "cal_p027",
+        "num_rules": 17,
+        "subject_depth": 3,
+        "object_depth": 2,
+        "num_conditions": 8,
+        "combiner": "only-one-applicable",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p028",
+        "num_rules": 17,
+        "subject_depth": 3,
+        "object_depth": 2,
+        "num_conditions": 7,
+        "combiner": "only-one-applicable",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 15,
+      "policy_a": {
+        "policy_id": "cal_p029",
+        "num_rules": 19,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 3,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p030",
+        "num_rules": 17,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 4,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 16,
+      "policy_a": {
+        "policy_id": "cal_p031",
+        "num_rules": 8,
+        "subject_depth": 1,
+        "object_depth": 2,
+        "num_conditions": 1,
+        "combiner": "first-applicable",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p032",
+        "num_rules": 8,
+        "subject_depth": 1,
+        "object_depth": 2,
+        "num_conditions": 2,
+        "combiner": "first-applicable",
+        "default_effect": "Deny"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 17,
+      "policy_a": {
+        "policy_id": "cal_p033",
+        "num_rules": 36,
+        "subject_depth": 4,
+        "object_depth": 1,
+        "num_conditions": 12,
+        "combiner": "only-one-applicable",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p034",
+        "num_rules": 17,
+        "subject_depth": 1,
+        "object_depth": 1,
+        "num_conditions": 10,
+        "combiner": "only-one-applicable",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 18,
+      "policy_a": {
+        "policy_id": "cal_p035",
+        "num_rules": 8,
+        "subject_depth": 3,
+        "object_depth": 1,
+        "num_conditions": 3,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p036",
+        "num_rules": 6,
+        "subject_depth": 3,
+        "object_depth": 1,
+        "num_conditions": 4,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 19,
+      "policy_a": {
+        "policy_id": "cal_p037",
+        "num_rules": 33,
+        "subject_depth": 3,
+        "object_depth": 2,
+        "num_conditions": 3,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p038",
+        "num_rules": 32,
+        "subject_depth": 3,
+        "object_depth": 2,
+        "num_conditions": 4,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 20,
+      "policy_a": {
+        "policy_id": "cal_p039",
+        "num_rules": 11,
+        "subject_depth": 1,
+        "object_depth": 1,
+        "num_conditions": 12,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p040",
+        "num_rules": 31,
+        "subject_depth": 4,
+        "object_depth": 2,
+        "num_conditions": 3,
+        "combiner": "only-one-applicable",
+        "default_effect": "Permit"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "discussion"
+    },
+    {
+      "pair_id": 21,
+      "policy_a": {
+        "policy_id": "cal_p041",
+        "num_rules": 29,
+        "subject_depth": 4,
+        "object_depth": 2,
+        "num_conditions": 6,
+        "combiner": "only-one-applicable",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p042",
+        "num_rules": 17,
+        "subject_depth": 3,
+        "object_depth": 1,
+        "num_conditions": 0,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 22,
+      "policy_a": {
+        "policy_id": "cal_p043",
+        "num_rules": 37,
+        "subject_depth": 1,
+        "object_depth": 1,
+        "num_conditions": 1,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p044",
+        "num_rules": 40,
+        "subject_depth": 1,
+        "object_depth": 1,
+        "num_conditions": 1,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 23,
+      "policy_a": {
+        "policy_id": "cal_p045",
+        "num_rules": 12,
+        "subject_depth": 1,
+        "object_depth": 3,
+        "num_conditions": 1,
+        "combiner": "only-one-applicable",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p046",
+        "num_rules": 21,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 11,
+        "combiner": "permit-overrides",
+        "default_effect": "Permit"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 24,
+      "policy_a": {
+        "policy_id": "cal_p047",
+        "num_rules": 24,
+        "subject_depth": 1,
+        "object_depth": 1,
+        "num_conditions": 7,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p048",
+        "num_rules": 26,
+        "subject_depth": 1,
+        "object_depth": 1,
+        "num_conditions": 8,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 25,
+      "policy_a": {
+        "policy_id": "cal_p049",
+        "num_rules": 18,
+        "subject_depth": 3,
+        "object_depth": 1,
+        "num_conditions": 3,
+        "combiner": "permit-overrides",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p050",
+        "num_rules": 21,
+        "subject_depth": 3,
+        "object_depth": 1,
+        "num_conditions": 2,
+        "combiner": "permit-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 26,
+      "policy_a": {
+        "policy_id": "cal_p051",
+        "num_rules": 33,
+        "subject_depth": 1,
+        "object_depth": 3,
+        "num_conditions": 8,
+        "combiner": "permit-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p052",
+        "num_rules": 13,
+        "subject_depth": 3,
+        "object_depth": 1,
+        "num_conditions": 1,
+        "combiner": "first-applicable",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 27,
+      "policy_a": {
+        "policy_id": "cal_p053",
+        "num_rules": 26,
+        "subject_depth": 3,
+        "object_depth": 3,
+        "num_conditions": 7,
+        "combiner": "permit-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p054",
+        "num_rules": 10,
+        "subject_depth": 4,
+        "object_depth": 2,
+        "num_conditions": 0,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 28,
+      "policy_a": {
+        "policy_id": "cal_p055",
+        "num_rules": 21,
+        "subject_depth": 4,
+        "object_depth": 3,
+        "num_conditions": 0,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p056",
+        "num_rules": 14,
+        "subject_depth": 1,
+        "object_depth": 2,
+        "num_conditions": 9,
+        "combiner": "first-applicable",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 29,
+      "policy_a": {
+        "policy_id": "cal_p057",
+        "num_rules": 7,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 1,
+        "combiner": "permit-overrides",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p058",
+        "num_rules": 7,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 2,
+        "combiner": "permit-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 30,
+      "policy_a": {
+        "policy_id": "cal_p059",
+        "num_rules": 14,
+        "subject_depth": 2,
+        "object_depth": 2,
+        "num_conditions": 0,
+        "combiner": "first-applicable",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p060",
+        "num_rules": 31,
+        "subject_depth": 2,
+        "object_depth": 2,
+        "num_conditions": 2,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 31,
+      "policy_a": {
+        "policy_id": "cal_p061",
+        "num_rules": 19,
+        "subject_depth": 4,
+        "object_depth": 2,
+        "num_conditions": 4,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p062",
+        "num_rules": 6,
+        "subject_depth": 2,
+        "object_depth": 2,
+        "num_conditions": 5,
+        "combiner": "permit-overrides",
+        "default_effect": "Permit"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 32,
+      "policy_a": {
+        "policy_id": "cal_p063",
+        "num_rules": 37,
+        "subject_depth": 3,
+        "object_depth": 1,
+        "num_conditions": 1,
+        "combiner": "permit-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p064",
+        "num_rules": 21,
+        "subject_depth": 1,
+        "object_depth": 1,
+        "num_conditions": 9,
+        "combiner": "only-one-applicable",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 33,
+      "policy_a": {
+        "policy_id": "cal_p065",
+        "num_rules": 37,
+        "subject_depth": 2,
+        "object_depth": 2,
+        "num_conditions": 0,
+        "combiner": "only-one-applicable",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p066",
+        "num_rules": 35,
+        "subject_depth": 2,
+        "object_depth": 2,
+        "num_conditions": 1,
+        "combiner": "only-one-applicable",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 34,
+      "policy_a": {
+        "policy_id": "cal_p067",
+        "num_rules": 39,
+        "subject_depth": 1,
+        "object_depth": 3,
+        "num_conditions": 5,
+        "combiner": "permit-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p068",
+        "num_rules": 39,
+        "subject_depth": 1,
+        "object_depth": 3,
+        "num_conditions": 6,
+        "combiner": "permit-overrides",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 35,
+      "policy_a": {
+        "policy_id": "cal_p069",
+        "num_rules": 24,
+        "subject_depth": 4,
+        "object_depth": 2,
+        "num_conditions": 6,
+        "combiner": "permit-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p070",
+        "num_rules": 27,
+        "subject_depth": 4,
+        "object_depth": 2,
+        "num_conditions": 5,
+        "combiner": "permit-overrides",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 36,
+      "policy_a": {
+        "policy_id": "cal_p071",
+        "num_rules": 31,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 9,
+        "combiner": "permit-overrides",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p072",
+        "num_rules": 40,
+        "subject_depth": 1,
+        "object_depth": 2,
+        "num_conditions": 4,
+        "combiner": "first-applicable",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 37,
+      "policy_a": {
+        "policy_id": "cal_p073",
+        "num_rules": 25,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 7,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p074",
+        "num_rules": 27,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 7,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 38,
+      "policy_a": {
+        "policy_id": "cal_p075",
+        "num_rules": 37,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 4,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p076",
+        "num_rules": 37,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 3,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 39,
+      "policy_a": {
+        "policy_id": "cal_p077",
+        "num_rules": 6,
+        "subject_depth": 4,
+        "object_depth": 3,
+        "num_conditions": 12,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p078",
+        "num_rules": 3,
+        "subject_depth": 4,
+        "object_depth": 3,
+        "num_conditions": 12,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 40,
+      "policy_a": {
+        "policy_id": "cal_p079",
+        "num_rules": 17,
+        "subject_depth": 2,
+        "object_depth": 1,
+        "num_conditions": 10,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p080",
+        "num_rules": 18,
+        "subject_depth": 2,
+        "object_depth": 1,
+        "num_conditions": 10,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 41,
+      "policy_a": {
+        "policy_id": "cal_p081",
+        "num_rules": 19,
+        "subject_depth": 4,
+        "object_depth": 1,
+        "num_conditions": 8,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p082",
+        "num_rules": 34,
+        "subject_depth": 2,
+        "object_depth": 2,
+        "num_conditions": 10,
+        "combiner": "permit-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 42,
+      "policy_a": {
+        "policy_id": "cal_p083",
+        "num_rules": 37,
+        "subject_depth": 4,
+        "object_depth": 1,
+        "num_conditions": 11,
+        "combiner": "only-one-applicable",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p084",
+        "num_rules": 21,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 4,
+        "combiner": "only-one-applicable",
+        "default_effect": "Permit"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "discussion"
+    },
+    {
+      "pair_id": 43,
+      "policy_a": {
+        "policy_id": "cal_p085",
+        "num_rules": 23,
+        "subject_depth": 3,
+        "object_depth": 3,
+        "num_conditions": 1,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p086",
+        "num_rules": 23,
+        "subject_depth": 3,
+        "object_depth": 3,
+        "num_conditions": 0,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 44,
+      "policy_a": {
+        "policy_id": "cal_p087",
+        "num_rules": 29,
+        "subject_depth": 1,
+        "object_depth": 2,
+        "num_conditions": 6,
+        "combiner": "permit-overrides",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p088",
+        "num_rules": 31,
+        "subject_depth": 1,
+        "object_depth": 1,
+        "num_conditions": 6,
+        "combiner": "only-one-applicable",
+        "default_effect": "Permit"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 45,
+      "policy_a": {
+        "policy_id": "cal_p089",
+        "num_rules": 29,
+        "subject_depth": 3,
+        "object_depth": 2,
+        "num_conditions": 12,
+        "combiner": "only-one-applicable",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p090",
+        "num_rules": 31,
+        "subject_depth": 3,
+        "object_depth": 2,
+        "num_conditions": 13,
+        "combiner": "only-one-applicable",
+        "default_effect": "Deny"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 46,
+      "policy_a": {
+        "policy_id": "cal_p091",
+        "num_rules": 39,
+        "subject_depth": 3,
+        "object_depth": 2,
+        "num_conditions": 7,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p092",
+        "num_rules": 39,
+        "subject_depth": 3,
+        "object_depth": 2,
+        "num_conditions": 7,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 47,
+      "policy_a": {
+        "policy_id": "cal_p093",
+        "num_rules": 30,
+        "subject_depth": 2,
+        "object_depth": 3,
+        "num_conditions": 8,
+        "combiner": "deny-overrides",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p094",
+        "num_rules": 6,
+        "subject_depth": 1,
+        "object_depth": 3,
+        "num_conditions": 6,
+        "combiner": "first-applicable",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 48,
+      "policy_a": {
+        "policy_id": "cal_p095",
+        "num_rules": 25,
+        "subject_depth": 3,
+        "object_depth": 2,
+        "num_conditions": 4,
+        "combiner": "only-one-applicable",
+        "default_effect": "Deny"
+      },
+      "policy_b": {
+        "policy_id": "cal_p096",
+        "num_rules": 25,
+        "subject_depth": 3,
+        "object_depth": 2,
+        "num_conditions": 3,
+        "combiner": "only-one-applicable",
+        "default_effect": "Deny"
+      },
+      "label": "same_family",
+      "expert_1": "same_family",
+      "expert_2": "same_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 49,
+      "policy_a": {
+        "policy_id": "cal_p097",
+        "num_rules": 35,
+        "subject_depth": 1,
+        "object_depth": 2,
+        "num_conditions": 3,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p098",
+        "num_rules": 6,
+        "subject_depth": 2,
+        "object_depth": 1,
+        "num_conditions": 0,
+        "combiner": "first-applicable",
+        "default_effect": "Permit"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    },
+    {
+      "pair_id": 50,
+      "policy_a": {
+        "policy_id": "cal_p099",
+        "num_rules": 18,
+        "subject_depth": 3,
+        "object_depth": 1,
+        "num_conditions": 9,
+        "combiner": "deny-overrides",
+        "default_effect": "Permit"
+      },
+      "policy_b": {
+        "policy_id": "cal_p100",
+        "num_rules": 24,
+        "subject_depth": 1,
+        "object_depth": 3,
+        "num_conditions": 0,
+        "combiner": "permit-overrides",
+        "default_effect": "Deny"
+      },
+      "label": "different_family",
+      "expert_1": "different_family",
+      "expert_2": "different_family",
+      "resolved_by": "agreement"
+    }
+  ]
+}

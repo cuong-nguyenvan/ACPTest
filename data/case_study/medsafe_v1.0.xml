@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MedSafe General Hospital — Access Control Policy Suite v1.0
+  27 rules, 14 conditions, 3 PolicySets
+  See CASE_STUDY.md §2 for documentation.
+  License: CC BY 4.0
+-->
+<PolicySet xmlns="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17"
+           PolicySetId="MedSafe-Root"
+           PolicyCombiningAlgId="urn:oasis:names:tc:xacml:3.0:policy-combining-algorithm:deny-overrides"
+           Version="1.0">
+  <Target/>
+
+  <!-- ═══════════════ Clinical-Access ═══════════════ -->
+  <PolicySet PolicySetId="Clinical-Access"
+             PolicyCombiningAlgId="urn:oasis:names:tc:xacml:3.0:policy-combining-algorithm:ordered-deny-overrides">
+
+    <!-- R01 DOC read med-rec [assigned-patient] → Permit -->
+    <Policy PolicyId="R01" Version="1.0"
+            RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable">
+      <Target>
+        <AnyOf><AllOf>
+          <Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+            <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">DOC</AttributeValue>
+            <AttributeDesignator Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                                 AttributeId="urn:his:attr:role" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/>
+          </Match>
+          <Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+            <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">read</AttributeValue>
+            <AttributeDesignator Category="urn:oasis:names:tc:xacml:3.0:attribute-category:action"
+                                 AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/>
+          </Match>
+          <Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+            <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">med-rec</AttributeValue>
+            <AttributeDesignator Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource"
+                                 AttributeId="urn:his:attr:resource-type" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/>
+          </Match>
+        </AllOf></AnyOf>
+      </Target>
+      <Rule RuleId="r01" Effect="Permit">
+        <Condition>
+          <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-is-in">
+            <AttributeDesignator Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource"
+                                 AttributeId="urn:his:attr:patient-id" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/>
+            <AttributeDesignator Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                                 AttributeId="urn:his:attr:assigned-patients" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/>
+          </Apply>
+        </Condition>
+      </Rule>
+    </Policy>
+
+    <!-- R02–R13: structural stubs (full conditions in production XML) -->
+    <Policy PolicyId="R02" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable">
+      <Target/><Rule RuleId="r02" Effect="Permit"><Condition><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-is-in"><AttributeDesignator Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource" AttributeId="urn:his:attr:patient-id" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeDesignator Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject" AttributeId="urn:his:attr:assigned-patients" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/></Apply></Condition></Rule>
+    </Policy>
+    <Policy PolicyId="R03" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable">
+      <Target/><Rule RuleId="r03" Effect="Permit"/>
+    </Policy>
+    <Policy PolicyId="R04" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable">
+      <Target/><Rule RuleId="r04" Effect="Permit"><Condition><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"><AttributeDesignator Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject" AttributeId="urn:his:attr:ward-id" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeDesignator Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource" AttributeId="urn:his:attr:ward-id" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/></Apply></Condition></Rule>
+    </Policy>
+    <Policy PolicyId="R05" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable">
+      <Target/><Rule RuleId="r05" Effect="Permit"><Condition><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:and"><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"><AttributeDesignator Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject" AttributeId="urn:his:attr:ward-id" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeDesignator Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource" AttributeId="urn:his:attr:ward-id" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/></Apply><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"><AttributeDesignator Category="urn:oasis:names:tc:xacml:3.0:attribute-category:environment" AttributeId="urn:his:attr:shift-active" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">true</AttributeValue></Apply></Apply></Condition></Rule>
+    </Policy>
+    <Policy PolicyId="R06" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r06" Effect="Permit"><Condition><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"><AttributeDesignator Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject" AttributeId="urn:his:attr:ward-id" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeDesignator Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource" AttributeId="urn:his:attr:ward-id" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/></Apply></Condition></Rule></Policy>
+    <Policy PolicyId="R07" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r07" Effect="Permit"/></Policy>
+    <Policy PolicyId="R08" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r08" Effect="Permit"><Condition><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"><AttributeDesignator Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject" AttributeId="urn:his:attr:report-owner" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">true</AttributeValue></Apply></Condition></Rule></Policy>
+    <Policy PolicyId="R09" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r09" Effect="Deny"/></Policy>
+    <Policy PolicyId="R10" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r10" Effect="Deny"/></Policy>
+    <Policy PolicyId="R11" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r11" Effect="Permit"><Condition><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"><AttributeDesignator Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject" AttributeId="urn:his:attr:patient-self" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">true</AttributeValue></Apply></Condition></Rule></Policy>
+    <Policy PolicyId="R12" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r12" Effect="Deny"/></Policy>
+    <Policy PolicyId="R13" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r13" Effect="Deny"/></Policy>
+  </PolicySet>
+
+  <!-- ═══════════════ Admin-Billing ═══════════════ -->
+  <PolicySet PolicySetId="Admin-Billing"
+             PolicyCombiningAlgId="urn:oasis:names:tc:xacml:3.0:policy-combining-algorithm:permit-overrides">
+    <Policy PolicyId="R14" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r14" Effect="Permit"/></Policy>
+    <Policy PolicyId="R15" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r15" Effect="Permit"><Condition><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"><AttributeDesignator Category="urn:oasis:names:tc:xacml:3.0:attribute-category:environment" AttributeId="urn:his:attr:office-hours" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">true</AttributeValue></Apply></Condition></Rule></Policy>
+    <Policy PolicyId="R16" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r16" Effect="Permit"/></Policy>
+    <Policy PolicyId="R17" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r17" Effect="Permit"/></Policy>
+    <Policy PolicyId="R18" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r18" Effect="Deny"/></Policy>
+    <Policy PolicyId="R19" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r19" Effect="Permit"><Condition><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"><AttributeDesignator Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject" AttributeId="urn:his:attr:own-patient-billing" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">true</AttributeValue></Apply></Condition></Rule></Policy>
+    <Policy PolicyId="R20" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r20" Effect="Permit"><Condition><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"><AttributeDesignator Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject" AttributeId="urn:his:attr:own-billing" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">true</AttributeValue></Apply></Condition></Rule></Policy>
+  </PolicySet>
+
+  <!-- ═══════════════ Audit-Export ═══════════════ -->
+  <PolicySet PolicySetId="Audit-Export"
+             PolicyCombiningAlgId="urn:oasis:names:tc:xacml:3.0:policy-combining-algorithm:deny-overrides">
+    <Policy PolicyId="R21" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r21" Effect="Permit"><Condition><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"><AttributeDesignator Category="urn:oasis:names:tc:xacml:3.0:attribute-category:environment" AttributeId="urn:his:attr:audit-window-open" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">true</AttributeValue></Apply></Condition></Rule></Policy>
+    <Policy PolicyId="R22" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r22" Effect="Permit"><Condition><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"><AttributeDesignator Category="urn:oasis:names:tc:xacml:3.0:attribute-category:environment" AttributeId="urn:his:attr:audit-window-open" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">true</AttributeValue></Apply></Condition></Rule></Policy>
+    <Policy PolicyId="R23" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r23" Effect="Permit"><Condition><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"><AttributeDesignator Category="urn:oasis:names:tc:xacml:3.0:attribute-category:environment" AttributeId="urn:his:attr:audit-window-open" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">true</AttributeValue></Apply></Condition></Rule></Policy>
+    <Policy PolicyId="R24" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r24" Effect="Deny"/></Policy>
+    <Policy PolicyId="R25" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r25" Effect="Deny"/></Policy>
+    <Policy PolicyId="R26" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r26" Effect="Permit"><Condition><Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-is-in"><AttributeDesignator Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource" AttributeId="urn:his:attr:patient-id" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/><AttributeDesignator Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject" AttributeId="urn:his:attr:assigned-patients" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/></Apply></Condition></Rule></Policy>
+    <Policy PolicyId="R27" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable"><Target/><Rule RuleId="r27" Effect="Permit"/></Policy>
+  </PolicySet>
+
+</PolicySet>
