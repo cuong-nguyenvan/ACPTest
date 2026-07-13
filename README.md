@@ -1,18 +1,17 @@
-# ACPTest — Adaptive Case-based Policy Testing
+# ACPTest 🔐
 
-> Combining **Case-Based Reasoning (CBR)** and **Reinforcement Learning (Q-learning)**
-> for efficient, reuse-driven access-control policy testing.
+> **Automated Test Suite Generation for Access Control Policies**
+> Using Case-Based Reasoning and Reinforcement Learning
 
-![ACPTest Results](docs/figures/Chart_Panel.png)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/License-MIT-green" />
+  <img src="https://img.shields.io/badge/Status-Research%20Code-orange" />
+  <img src="https://img.shields.io/badge/XACML-3.0-blueviolet" />
+  <img src="https://img.shields.io/badge/Algorithm-CBR%20%2B%20RL-informational" />
+</p>
 
-## Key Results (R = 30 runs)
-
-| Configuration | Coverage | Fault Detection | Test Cases | Redundancy |
-|---|---|---|---|---|
-| From-scratch | 51.55 ± 1.11 % | 36.95 ± 1.61 % | 36.75 ± 0.59 | 37.66 ± 0.63 % |
-| CBR only | 83.26 ± 1.50 % | 71.98 ± 1.74 % | 20.45 ± 0.31 | 22.50 ± 0.46 % |
-| RL only | 76.10 ± 1.09 % | 64.13 ± 1.69 % | 28.33 ± 0.37 | 32.25 ± 0.60 % |
-| **CBR + RL (ACPTest)** | **90.73 ± 1.18 %** | **86.22 ± 1.14 %** | **21.04 ± 0.25** | **4.19 ± 0.22 %** |
+This repository contains the experimental artifact for the paper:
 
 ## Quick Start
 
