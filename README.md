@@ -127,3 +127,16 @@ ACPTest/
 ## License
 
 This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+## Contact
+
+**Cuong-Nguyen Van**
+Faculty of Information Systems
+Phenikaa University, Hanoi, Vietnam
+
+Email: cuong.nguyenvan@phenikaa-uni.edu.vn
+
+---
+
+## Acknowledgement
+
+This repository was developed as part of the research on automated, explainable test generation for access control policies, combining case-based reasoning and reinforcement learning.
