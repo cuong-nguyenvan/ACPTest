@@ -116,11 +116,10 @@ ACPTest/
 ## Citation
 
 ```bibtex
-@article{nguyen2026acptest,
-  title   = {ACPTest: Adaptive Case-Based Policy Testing with
-             Reinforcement Learning},
-  author  = {Nguyen, Cuong Van},
-  year    = {2026}
+@article{cuongACPTest,
+  title={Automated Test Suite Generation for XACML 3.0 Access Control Policies Using Case-Based Reasoning and Reinforcement Learning},
+  author={Van, Cuong Nguyen and Trinh, Thanh Binh and Ngoc, Minh Le and Ha, Nguyen Viet},
+  year={2026}
 }
 ```
 
